@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="Welcome to buildbeta Dashboard admin />
+    <meta property="og:title" content="{{ config('app.name') }}" />
+    <meta property="og:description" content="Buildbeta is an O2O platform for everything relating to building, building material, real estate, home services and
+    appliances, furniture, and office wares." />
+    <meta property="og:image" content="{{ asset('general/imgs/BUILDBETA_LOGO_2_PNG.png') }}" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="{{ config('app.name') }}" />
+
     <meta name="description" content="Buildbeta is an O2O platform for everything relating to building, building material, real estate, home services and
     appliances, furniture, and office wares.
     It is an internet platform which gives both suppliers, service providers and buyers a fair ground for every business and 
@@ -38,7 +50,7 @@
     <link href="{{ asset('main/assets/switcher/css/switcher.css') }}" rel="stylesheet">
     <link href="{{ asset('main/assets/switcher/demo.css') }}" rel="stylesheet">
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     
     <body class="app sidebar-mini ltr light-mode">
