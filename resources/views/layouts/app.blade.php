@@ -1,35 +1,102 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <!-- META DATA -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Buildbeta is an O2O platform for everything relating to building, building material, real estate, home services and
+    appliances, furniture, and office wares.
+    It is an internet platform which gives both suppliers, service providers and buyers a fair ground for every business and 
+    transaction relating to building, building materials, home appliances, furniture, real estate, artisanry, etc.
+    Buildbeta O2O internet marketplace gives suppliers and service provides a platform to showcase their activities while also 
+    giving buyers the opportunity to choose from comparatively different vendors and service providers. ">
+    <meta name="author" content="Buildbeta">
+    <meta name="keywords"
+        content="Buildbeta, O2O platform, building, building material, real estate, home services and
+        appliances, furniture, and office wares,suppliers, service providers, buyers building, building materials, home appliances, furniture, real estate, artisanry ">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/png" href="{{ asset('general/imgs/BUILDBETA_LOGO_2_PNG.png') }}">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    <script>
+        WebFontConfig = {
+            google: {
+                families: ['Open+Sans:300,400,600,700,800', 'Poppins:300,400,500,600,700', 'Shadows+Into+Light:400', 'Segoe+Script:300,400,500,600']
+            }
+        };
+        (function(d) {
+            var wf = d.createElement('script'),
+                s = d.scripts[0];
+            wf.src = 'market/assets/js/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{{ asset('market/assets/css/bootstrap.min.css') }}">
+
+    {{-- buildbeta css --}}
+    <link rel="stylesheet" href="{{ asset('market/assets/css/buildbeta.css') }}">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{{ asset('market/assets/css/demo2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('market/assets/vendor/fontawesome-free/css/all.min.css') }}">
+
+    <!-- TITLE -->
+    <title>Buildbeta Platfofrm </title>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    <body>
+        <div class="page-wrapper">
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <!-- Header -->
+            @include('market.partials.header')
+            
+            <main class="main home">
+                <div class="container mt-2">
+                    @yield('content')
+                </div>
             </main>
+
+            @include('market.partials.footer')
         </div>
+    <!-- End .page-wrapper -->
+
+        {{-- Loader --}}
+        <div class="loading-overlay">
+            <div class="bounce-loader" style="user-select: none;">
+                <img height="180" width="180" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" alt="Loader">
+            </div>
+        </div>
+    
+        <div class="mobile-menu-overlay"></div>
+        <!-- End .mobil-menu-overlay -->
+    
+        <!-- End .mobile-menu-container -->
+        @include('market.partials.mobile.sidebar')     
+
+        {{-- Bottom Mobile menu --}}
+        @include('market.partials.mobile.navigator')
+        {{-- Mobile Menu --}}
+        
+    <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+
+    <!-- Plugins JS File -->
+    <script src="{{ asset('market/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('market/assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('market/assets/js/optional/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('market/assets/js/optional/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('market/assets/js/plugins.min.js') }}"></script>
+    <script src="{{ asset('market/assets/js/jquery.appear.min.js') }}"></script>
+
+    <!-- Main JS File -->
+    <script src="{{ asset('market/assets/js/main.min.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>

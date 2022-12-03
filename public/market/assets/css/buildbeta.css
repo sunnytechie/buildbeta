@@ -1,0 +1,6 @@
+/* media show only screen 480px */
+@media screen and (min-width: 480px) {
+.show-only-mobile {
+    display: none;
+}
+}

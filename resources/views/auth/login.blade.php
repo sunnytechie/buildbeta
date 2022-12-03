@@ -1,7 +1,27 @@
 <x-guest-layout>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 bg-primary text-white" style="height: 100vh">Design</div>
+            {{-- intro screen --}}
+            <div class="col-md-4 text-white" style="height: 100vh; background-image: url('{{ asset("general/imgs/intro_bg.jpg") }}'); background-size: cover;">
+                <div style="height: 50vh">
+                    <div class="d-flex p-5">
+                        <img height="100px" width="100px" src="{{ asset('general/imgs/BUILDBETA_LOGO_2_PNG.png') }}" alt="">
+                        {{-- <h1 class="text-start">Welcome to BuildBeta</h1> --}}
+                    </div>
+                </div>
+
+                {{-- Align to the buttom --}}
+                <div class="justify-content-center align-items-end" style="height: 50vh">
+                    <div class="p-5">
+                        <p class="text-start font-italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit modi error distinctio, similique culpa fugit esse veniam quod dolores soluta magni ad. Harum cupiditate nisi sequi sapiente enim cumque quia.</p>
+                    </div>
+
+                    <div class="p-5">
+                        <b>...Real people real deal</b>
+                        <p class="text-start font-italic">agni ad. Harum cupiditate nisi sequi sapiente enim cumque quia.</p>
+                    </div>
+                </div>
+            </div>
 
             <div class="col-md-8" style="height: 100vh">
             {{-- text and button to the right --}}
@@ -19,7 +39,7 @@
 
                             {{-- header --}}
                             <div class="justify-content-start mb-5">
-                                <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 20px;">Welcome to Build</span><span>Beta</span></h4>
+                                <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 25px;">Welcome to Build</span><span>Beta</span></h4>
                                 <p>Thank you for being here</p>
                             </div>
 

@@ -50,4 +50,34 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //hasMany products
+    public function products()
+    {
+        return $this->hasMany('App\Models\Product');
+    }
+
+    //hasMany sellers
+    public function sellers()
+    {
+        return $this->hasMany('App\Models\Seller');
+    }
+
+    //hasMany bbforce
+    public function bbforce()
+    {
+        return $this->hasMany('App\Models\Bbforce');
+    }
+
+    //hasMany buyers
+    public function buyers()
+    {
+        return $this->hasMany('App\Models\Buyer');
+    }
+
+    //hasMany vacancies
+    public function vacancies()
+    {
+        return $this->hasMany('App\Models\Vacancy');
+    }
 }

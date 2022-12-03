@@ -40,23 +40,40 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
+    
+    <body class="app sidebar-mini ltr light-mode">
+
         <!-- GLOBAL-LOADER -->
-        <div id="global-loader">
-            <img height="120" width="120" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
+        <div id="global-loader" style="user-select: none;">
+            <img height="80" width="80" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
         </div>
         <!-- /GLOBAL-LOADER -->
-        
-        <div class="font-sans text-gray-900 antialiased">
-            @yield('content')
-        </div>
+
+        <div class="page">
+            <div class="page-main">
+
+                @include('dashboard.partials.header')
+                @include('dashboard.partials.sidebar')
 
         
+                <div class="main-content app-content mt-0">
+                    <div class="side-app">
     
-        
+                        <!-- CONTAINER -->
+                        <div class="main-container container-fluid">
+                            @yield('content')
+                        </div>
+                        <!-- CONTAINER END -->
 
+                    </div>
+                </div>
 
-        <!-- BACK-TO-TOP -->
+            </div>
+        </div>
+    
+
+    @include('dashboard.partials.footer')
+    <!-- BACK-TO-TOP -->
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <!-- JQUERY JS -->
@@ -95,9 +112,20 @@
     <script src="{{ asset('main/assets/plugins/select2/select2.full.min.js') }}"></script>
 
     <!-- INTERNAL Data tables js-->
+    <!-- DATA TABLE JS-->
     <script src="{{ asset('main/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('main/assets/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/js/buttons.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('main/assets/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('main/assets/js/table-data.js') }}"></script>
 
     <!-- INTERNAL APEXCHART JS -->
     <script src="{{ asset('main/assets/js/apexcharts.js') }}"></script>
