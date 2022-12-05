@@ -1,6 +1,6 @@
 @extends('layouts.app')
     @section('content')
-    <div class="row">
+    <div class="row hide-from-mobile">
         <div class="col-lg-3 mb-2 appear-animate" data-animation-name="fadeInRightShorter" data-animation-delay="200" data-animation-duration="1000">
             <div class="side-menu-wrapper">
                 <h2 class="side-menu-title ls-10">Top Categories</h2>
@@ -31,7 +31,7 @@
     <!-- End .row -->
 
 
-    <div class="info-boxes-container row row-joined mb-1 appear-animate" data-animation-name="fadeInUpShorter" data-animation-duration="1000">
+    <div class="info-boxes-container row row-joined mb-1 appear-animate hide-from-mobile" data-animation-name="fadeInUpShorter" data-animation-duration="1000">
         <div class="info-box info-box-icon-left col-lg-4">
             <i class="icon-money"></i>
             
@@ -67,7 +67,9 @@
     </div>
     <!-- End .info-boxes-container -->
 
-    {{-- featured --}}
+    
+    <div class="mt-mobile-only">
+        {{-- featured --}}
     @include('products.recommended')
 
     {{-- ta blade --}}
@@ -78,6 +80,8 @@
 
     {{-- independent blade --}}
     @include('products.independent')
+    </div>
+    
 
 
     @endsection

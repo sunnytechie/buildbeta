@@ -1,5 +1,5 @@
 <header class="header" style="background-color: #0080E6">
-    <div style="background-color: #0080E6">
+    <div class="hide-from-mobile" style="background-color: #0080E6">
         <div class="container">
             <div class="header-top d-flex align-items-center w-100">
                 <div class="header-left">
@@ -69,14 +69,14 @@
         </div>
         <!-- End .header-top -->
 
-        <div class="header-middle sticky-header" data-sticky-options="{'mobile': true}">
+        <div class="header-middle py-3 sticky-header" data-sticky-options="{'mobile': true}">
             <div class="container">
                 <div class="header-left col-lg-2 w-auto pl-0">
                     <button class="mobile-menu-toggler mr-2" type="button">
                         <i class="fas fa-bars"></i>
                     </button>
                     <a href="/" class="logo">
-                        <h4 style="color: #ffffff; user-select: none"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 28px;">Build</span><span>Beta</span></h4>
+                        Buildbeta
                         {{-- <img src="{{ asset('general/imgs/BUILDBETA_LOGO_4_PNG.png') }}" alt="Buildbeta"> --}}
                     </a>
                 </div>
@@ -138,7 +138,7 @@
                 <div class="header-left">
                     <a href="#" class="logo">
                         {{-- <img src="{{ asset('general/imgs/BUILDBETA_LOGO_4_PNG.png') }}" alt="buildbeta Logo"> --}}
-                        <h4 style="color: #ffffff; user-select: none"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 25px;">Build</span><span>Beta</span></h4>
+                        Buildbeta
                     </a>
                 </div>
                 <div class="header-center">
@@ -306,5 +306,15 @@
         </div>
         <!-- End .header-bottom -->
     </div>
+
+
+
+    {{-- Mobile --}}
+    @include('market.partials.mobile.navbar')
+    {{-- End Mobile --}}
 </header>
 <!-- End .header -->
+
+{{-- mobile tab --}}
+@include('market.partials.mobile.tab')
+{{-- end mobile tab --}}

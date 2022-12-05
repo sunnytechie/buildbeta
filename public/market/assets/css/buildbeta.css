@@ -4,3 +4,21 @@
     display: none;
 }
 }
+
+@media screen and (max-width: 480px) {
+    .hide-from-mobile {
+        display: none !important;
+    } 
+    /* .mt-mobile-only {
+        margin-top: 150px !important;
+    } */
+}
+
+.search input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  .mobile-tab::-webkit-scrollbar {
+    display: none;
+  }

@@ -1,27 +1,27 @@
-<div class="sticky-navbar">
-    <div class="sticky-info">
+<div class="sticky-navbar border-0 py-3" style="box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.25);">
+    <div class="sticky-info border-0">
         <a href="#">
-            <ion-icon class="mt-1" style="font-size: 28px" name="home-outline"></ion-icon>Home
+            <img src="{{ asset('general/imgs/icons/home.svg') }}" alt="">Home
         </a>
     </div>
-    <div class="sticky-info">
+    <div class="sticky-info border-0">
         <a href="#" class="">
-            <ion-icon class="mt-1" style="font-size: 28px" name="podium-outline"></ion-icon>Products
+            <img src="{{ asset('general/imgs/icons/product.svg') }}" alt="">Products
         </a>
     </div>
-    <div class="sticky-info">
+    <div class="sticky-info border-0">
         <a href="#" class="">
-            <ion-icon class="mt-1" style="font-size: 28px" name="add-circle-outline"></ion-icon>Post Product
+            <img src="{{ asset('general/imgs/icons/post.svg') }}" alt="">Post Product
         </a>
     </div>
-    <div class="sticky-info">
+    <div class="sticky-info border-0">
         <a href="my-account.html" class="">
-            <ion-icon class="mt-1" style="font-size: 28px" name="briefcase-outline"></ion-icon>Job Vacancies
+            <img src="{{ asset('general/imgs/icons/job.svg') }}" alt="">Job Vacancies
         </a>
     </div>
-    <div class="sticky-info">
+    <div class="sticky-info border-0">
         <a href="#" class="">
-            <ion-icon class="mt-1" style="font-size: 28px" name="person-circle-outline"></ion-icon>Dashboard
+            <img src="{{ asset('general/imgs/icons/dashboard.svg') }}" alt="">Dashboard
         </a>
     </div>
 </div>

@@ -50,7 +50,7 @@
     <link href="{{ asset('main/assets/switcher/css/switcher.css') }}" rel="stylesheet">
     <link href="{{ asset('main/assets/switcher/demo.css') }}" rel="stylesheet">
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     
     <body class="app sidebar-mini ltr light-mode">

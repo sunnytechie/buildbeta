@@ -59,8 +59,8 @@
     <!-- TITLE -->
     <title>Buildbeta Platfofrm </title>
 
-        <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
     <body>

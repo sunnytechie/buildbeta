@@ -1,4 +1,4 @@
-<div class="col-lg-9 mb-2 appear-animate" data-animation-name="fadeInLeftShorter" data-animation-delay="100" data-animation-duration="500">
+<div class="col-lg-9 mb-2 appear-animate hide-from-mobile" data-animation-name="fadeInLeftShorter" data-animation-delay="100" data-animation-duration="500">
     <div class="home-slider owl-carousel owl-theme" data-owl-options="{
         'dots': true,
         'nav': true,

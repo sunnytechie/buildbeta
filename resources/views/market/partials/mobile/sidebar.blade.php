@@ -2,6 +2,13 @@
     <div class="mobile-menu-wrapper">
         <span class="mobile-menu-close"><i class="fa fa-times"></i></span>
         <nav class="mobile-nav">
+
+            <div class="px-4 pb-5">
+                <ion-icon name="person-circle-outline" style="font-size: 25px"></ion-icon>
+                <br><span style="font-size: 14px; font-weight:500; line-height: 22.4px">User Name</span><br>
+                <span>E-mail@Address.com</span>
+            </div>
+
             <ul class="mobile-menu">
                 <li><a href="#">Buildbeta</a></li>
                 <li><a href="#">Buildbeta pro</a></li>
