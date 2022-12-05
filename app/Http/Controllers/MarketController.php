@@ -10,4 +10,14 @@ class MarketController extends Controller
     {
         return view('buildbeta');
     }
+    
+    public function search()
+    {
+        return view('search');
+    }
+
+    public function browse()
+    {
+        return view('browse');
+    }
 }

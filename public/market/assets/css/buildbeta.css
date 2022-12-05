@@ -22,3 +22,8 @@
   .mobile-tab::-webkit-scrollbar {
     display: none;
   }
+
+  .active-border .border-primary {
+    border-left: 0.3rem solid #0080E6;
+    border-bottom: 0 !important;
+  }

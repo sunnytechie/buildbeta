@@ -7,5 +7,9 @@ use Illuminate\Http\Request;
 
 class VacancyController extends Controller
 {
-    //
+    //index
+    public function index()
+    {
+        return view('job');
+    }
 }

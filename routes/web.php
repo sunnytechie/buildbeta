@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\VacancyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\ProfileController;
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MarketController::class, 'index'])->name('market');
+Route::get('/search', [MarketController::class, 'search'])->name('search');
+Route::get('/browse-product', [MarketController::class, 'browse'])->name('browse');
+Route::get('/jobs', [VacancyController::class, 'index'])->name('job');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth', 'is_admin');
 
 Route::middleware('auth')->group(function () {
@@ -29,5 +34,6 @@ Route::middleware('auth')->group(function () {
 Route::resource('categories', 'App\Http\Controllers\CategoryController')->middleware('auth', 'is_admin');
 //resource routes for subcategories
 Route::resource('subcategories', 'App\Http\Controllers\SubcategoryController')->middleware('auth', 'is_admin');
+//resource routes for vacancies
 
 require __DIR__.'/auth.php';

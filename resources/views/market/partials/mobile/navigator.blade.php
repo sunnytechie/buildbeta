@@ -5,22 +5,22 @@
         </a>
     </div>
     <div class="sticky-info border-0">
-        <a href="#" class="">
+        <a href="#">
             <img src="{{ asset('general/imgs/icons/product.svg') }}" alt="">Products
         </a>
     </div>
     <div class="sticky-info border-0">
-        <a href="#" class="">
+        <a href="#">
             <img src="{{ asset('general/imgs/icons/post.svg') }}" alt="">Post Product
         </a>
     </div>
     <div class="sticky-info border-0">
-        <a href="my-account.html" class="">
+        <a href="#">
             <img src="{{ asset('general/imgs/icons/job.svg') }}" alt="">Job Vacancies
         </a>
     </div>
     <div class="sticky-info border-0">
-        <a href="#" class="">
+        <a href="#">
             <img src="{{ asset('general/imgs/icons/dashboard.svg') }}" alt="">Dashboard
         </a>
     </div>
