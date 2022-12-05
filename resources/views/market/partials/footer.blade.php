@@ -1,7 +1,7 @@
-<footer class="footer bg-dark position-relative">
+<footer class="footer mt-5 bg-dark position-relative">
     <div class="footer-middle">
         <div class="container position-static">
-            <div class="footer-ribbon bg-primary text-white ls-0">
+            <div class="footer-ribbon bb-bg-btn text-white ls-0">
                 Get in touch
             </div>
             <!-- End .footer-ribbon -->

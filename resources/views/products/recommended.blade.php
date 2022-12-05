@@ -1,6 +1,6 @@
 <section class="featured-products-section">
     <div class="container">
-        <h2 class="section-title heading-border ls-20 border-0 my-5">Recommended Products</h2>
+        <h2 class="section-title my-3 mt-4" style="font-style: normal; font-weight: 500; font-size: 16px; line-height: 160%; text-transform:capitalize">Recommmendations</h2>
 
         <div class="products-slider custom-products owl-carousel owl-theme nav-outer show-nav-hover nav-image-center"
             data-owl-options="{
@@ -41,7 +41,7 @@
                         <div class="product-label label-sale">-20%</div>
                     </div> --}}
                 </figure>
-                <button class="btn p-1" style="position: absolute; margin-top: -45px; margin-left: 8px; background: #0080E6; color: #fff; line-height: 16px; font-size: 10px; text-transform: capitalize; font-weight: 600">Design</button>
+                <button class="btn p-1" style="position: absolute; margin-top: -45px; margin-left: 8px; background: #0080E6; color: #fff; line-height: 16px; font-size: 10px; text-transform: capitalize; font-weight: 600">Interior</button>
 
                 <div class="category-tag">
                     <a href="#" class="p-2 btn" style="color: #ccc; font-size: 14px; text-transform:capitalize; line-height: 16px; font-weight: 400">Buildbeta</a>

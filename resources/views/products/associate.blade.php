@@ -1,6 +1,6 @@
 <section class="featured-products-section">
     <div class="container">
-        <h2 class="section-title heading-border ls-20 border-0 my-5">Category 3</h2>
+        <h2 class="section-title my-3 mt-1" style="font-style: normal; font-weight: 500; font-size: 16px; line-height: 160%; text-transform:capitalize">Category 3</h2>
 
         <div class="products-slider custom-products owl-carousel owl-theme nav-outer show-nav-hover nav-image-center"
             data-owl-options="{

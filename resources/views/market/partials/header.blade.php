@@ -76,7 +76,7 @@
                         <i class="fas fa-bars"></i>
                     </button>
                     <a href="/" class="logo">
-                        Buildbeta
+                        <img height="30px" width="30px" src="{{ asset('general/imgs/icons/logo.svg') }}" alt="">
                         {{-- <img src="{{ asset('general/imgs/BUILDBETA_LOGO_4_PNG.png') }}" alt="Buildbeta"> --}}
                     </a>
                 </div>
@@ -138,7 +138,7 @@
                 <div class="header-left">
                     <a href="#" class="logo">
                         {{-- <img src="{{ asset('general/imgs/BUILDBETA_LOGO_4_PNG.png') }}" alt="buildbeta Logo"> --}}
-                        Buildbeta
+                        <img height="30px" width="30px" src="{{ asset('general/imgs/icons/logo.svg') }}" alt="">
                     </a>
                 </div>
                 <div class="header-center">

@@ -6,7 +6,7 @@
                     <img src="{{ asset('general/imgs/icons/menu.svg') }}" alt="">
                 </button>
                 <a href="#" class="logo">
-                    Buildbeta
+                    <img height="30px" width="30px" src="{{ asset('general/imgs/icons/logo.svg') }}" alt="">
                 </a>
             </div>
             <!-- End .header-left -->

@@ -27,3 +27,12 @@
     border-left: 0.3rem solid #0080E6;
     border-bottom: 0 !important;
   }
+
+  .bb-bg-btn {
+    background: #0080E6 !important;
+    color: #fff;
+  }
+
+  .sticky-header.fixed {
+    background: #0080E6 !important;
+  }
