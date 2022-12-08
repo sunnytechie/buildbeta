@@ -31,8 +31,13 @@
   .bb-bg-btn {
     background: #0080E6 !important;
     color: #fff;
+    border-radius: 0;
   }
 
   .sticky-header.fixed {
     background: #0080E6 !important;
+  }
+
+  .bb-check-link a {
+    color: #0080E6 !important;
   }

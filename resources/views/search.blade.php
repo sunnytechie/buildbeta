@@ -1,5 +1,10 @@
 @extends('layouts.app')
     @section('content')
+    <style>
+        .mobile-tab {
+            display: none !important;
+        }
+    </style>
     <div class="my-5 mt-1">
         <div class="row">
             <div class="col-md-3 col-6">

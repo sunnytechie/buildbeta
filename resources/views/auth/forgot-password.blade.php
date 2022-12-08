@@ -1,33 +1,83 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+    <div class="container-fluid">
+        <div class="row">
+            {{-- intro screen --}}
+            <div class="col-md-4 hide-from-mobile text-white" style="height: 100vh; background-image: url('{{ asset("general/imgs/intro_bg.jpg") }}'); background-size: cover;">
+                <div style="height: 50vh">
+                    <div class="d-flex p-5">
+                        <img height="100px" width="100px" src="{{ asset('general/imgs/BUILDBETA_LOGO_2_PNG.png') }}" alt="">
+                        {{-- <h1 class="text-start">Welcome to BuildBeta</h1> --}}
+                    </div>
+                </div>
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                {{-- Align to the buttom --}}
+                <div class="justify-content-center align-items-end" style="height: 50vh">
+                    <div class="p-5">
+                        <p class="text-start font-italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit modi error distinctio, similique culpa fugit esse veniam quod dolores soluta magni ad. Harum cupiditate nisi sequi sapiente enim cumque quia.</p>
+                    </div>
+
+                    <div class="p-5">
+                        <b>...Real people real deal</b>
+                        <p class="text-start font-italic">agni ad. Harum cupiditate nisi sequi sapiente enim cumque quia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8" style="height: 100vh">
+            {{-- text and button to the right --}}
+            <div class="d-flex justify-content-between">
+                {{-- Arrow Back to welcome --}}
+                <div class="pt-5 pb-1">
+                    <a href="{{ route('login') }}" class="border border-primary text-primary">
+                        <i class="fe fe-arrow-left" style="font-size: 20px"></i>
+                    </a>
+                </div>
+                <div class="py-5">
+                    <p class="text-center">Don't have an account? <a href="{{ route('welcome') }}" class="border border-primary text-primary">Sign up</a></p>
+                </div>
+                </div>
+            {{-- end text and button to the right --}}
+            {{-- form --}}
+                <div class="col-md-6 offset-md-3">
+                    <div class="pt-5 pb-5">
+                        <form method="POST" action="{{ route('password.email') }}">
+                            @csrf
+
+                            {{-- header --}}
+                            <div class="justify-content-start mb-5">
+                                <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 25px;">Welcome to Build</span><span>Beta</span></h4>
+                                <p>Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</p>
+                                {{-- session status --}}
+                                @if (session('status'))
+                                    <p class="text-success py-3">
+                                        {{ session('status') }}
+                                    </p>
+                                @endif
+                            </div>
+
+                            {{-- email input with user icon on the left --}}
+                            <div class="mb-3">
+                                <input 
+                                type="email" 
+                                class="form-control @error('email') is-invalid @enderror"
+                                value="{{ old('email') }}"
+                                id="email" name="email" 
+                                aria-describedby="emailHelp" 
+                                placeholder="Your email">
+
+                                @if ($errors->has('email'))
+                                    <div id="emailHelp" class="form-text text-danger">
+                                        <div>{{ $errors->first('email') }}</div>
+                                    </div>
+                                @else
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> 
+                                @endif
+                            </div>
+                            <button type="submit" class="btn btn-primary bb-bg-btn w-100">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-primary-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-auth-card>
 </x-guest-layout>
+

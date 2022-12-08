@@ -55,17 +55,17 @@
     {{-- Mobile search section --}}
     <div class="header-middle p-0 pb-4">
         <div class="container">
-            <div class="header-left search-filter" style="width: 80%">
+            <div class="header-left search-filter" style="width: 100%">
                 <form class="search mb-0" style="width: 100%">
                         <input type="text"placeholder="Search..." required style="padding: 10px; background: transparent; font-size: 14px; color: #fff; border: 0.2rem solid #fff; width: 100%;">
                 </form>
             </div>
 
-            <div class="header-right px-0" style="float: right" style="width: 20%">
+            {{-- <div class="header-right px-0" style="float: right" style="width: 20%">
                 <a href="#" class="header-icon" title="Notifications">
                     <img src="{{ asset('general/imgs/icons/filter.svg') }}" alt="Notifications">
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
 

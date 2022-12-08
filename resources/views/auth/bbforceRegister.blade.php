@@ -32,7 +32,6 @@
                             <i class="fe fe-arrow-left" style="font-size: 20px"></i>
                         </a>
                     </div>
-
                     <div class="pt-5 pb-1">
                         <p class="text-center">Already have an account? <a href="{{ route('login') }}" class="border border-primary text-primary">Log in</a></p>
                     </div>
@@ -41,14 +40,13 @@
             
             {{-- form --}}
                 <div class="col-md-6 offset-md-3">
-                    <div class="py-2">
+                    <div class="py-3">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-
                             {{-- hidden user_type --}}
-                            <input type="hidden" name="user_type" value="buyer">
+                            <input type="hidden" name="user_type" value="bbforce">
                             {{-- header --}}
-                            <div class="justify-content-start mb-3">
+                            <div class="justify-content-start mb-5">
                                 <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 25px;">Welcome to Build</span><span>Beta</span></h4>
                                 <p>Thank you for being here</p>
                             </div>
@@ -193,7 +191,6 @@
                                     type="tel" 
                                     name="phone" 
                                     id="phone" 
-                                    value="{{ old('phone') }}"
                                     class="form-control @error('phone') is-invalid @enderror">
                                     @if ($errors->has('phone'))
                                         <div id="textHelp" class="form-text text-danger">

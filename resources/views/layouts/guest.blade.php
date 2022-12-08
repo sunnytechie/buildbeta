@@ -49,8 +49,46 @@
     <!-- INTERNAL Switcher css -->
     <link href="{{ asset('main/assets/switcher/css/switcher.css') }}" rel="stylesheet">
     <link href="{{ asset('main/assets/switcher/demo.css') }}" rel="stylesheet">
+
+    {{-- buildbetacss --}}
+    <link rel="stylesheet" href="{{ asset('market/assets/css/buildbeta.css') }}">
         <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        .select-sign-up-bg {
+            background: #fff;
+            border: 0.1rem solid #0080E6 !important;
+            border-radius: 0 !important;
+        }
+        .select-sign-up-bg:hover {
+            background: #0080E6;
+        }
+
+        .select-sign-up-bg:hover .card-title {
+            color: #fff !important;
+        }
+
+        .select-sign-up-bg:hover .card-text {
+            color: #fff !important;
+        }
+
+        .iti input[type=text], .iti input[type=tel] {
+            height: 41px;
+            border: 1px solid #6b7280;
+            border-radius: 0 !important;
+            font-size: 14px;
+        }
+
+        select {
+            height: 41px;
+            border: 1px solid #6b7280 !important;
+            border-radius: 0 !important;
+            font-size: 14px;
+        }
+
+        
+    </style>
     </head>
     <body>
         <!-- GLOBAL-LOADER -->
@@ -97,6 +135,11 @@
     <!-- INTERNAL INDEX JS -->
     <script src="{{ asset('main/assets/js/index1.js') }}"></script>
 
+    <!-- INTERNAL intlTelInput js-->
+    <script src="{{ asset('main/assets/plugins/intl-tel-input-master/intlTelInput.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/intl-tel-input-master/country-select.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/intl-tel-input-master/utils.js') }}"></script>
+
     <!-- Color Theme js -->
     <script src="{{ asset('main/assets/js/themeColors.js') }}"></script>
 
@@ -109,5 +152,17 @@
     <!-- Switcher js -->
     <script src="{{ asset('main/assets/switcher/js/switcher.js') }}"></script>
 
+    <script>
+        $('form').submit(function (event) {
+        if ($(this).hasClass('submitted')) {
+            event.preventDefault();
+            document.getElementById("submit").disabled = true;
+        }
+        else {
+            $(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i>');
+            $(this).addClass('submitted');
+        }
+    });
+    </script>
     </body>
 </html>

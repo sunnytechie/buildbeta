@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\Api\VacancyController;
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Api\VacancyController;
+use App\Http\Controllers\PersonalizeController;
 use App\Http\Controllers\RequirementController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,15 +20,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Auth Bbforce Reg
+Route::get('/bbforce-register', [RegisteredUserController::class, 'createBbforce'])->middleware('guest')->name('bbforce.register');
+//Auth Seller Reg
+Route::get('/seller-register', [RegisteredUserController::class, 'createSeller'])->middleware('guest')->name('seller.register');
+Route::get('/welcome', [PersonalizeController::class, 'welcome'])->name('welcome');
+
+Route::get('/personalize-search', [PersonalizeController::class, 'create'])->name('create.personalize')->middleware('auth', 'verified');
+Route::post('/personalize', [PersonalizeController::class, 'store'])->name('store.personalize')->middleware('auth');
 Route::get('/', [MarketController::class, 'index'])->name('market');
 Route::get('/search', [MarketController::class, 'search'])->name('search');
 Route::get('/browse-product', [MarketController::class, 'browse'])->name('browse');
-Route::get('/jobs', [VacancyController::class, 'index'])->name('job')->middleware('auth');
-Route::get('/post-products-requirement', [RequirementController::class, 'product'])->name('post.product.requirement')->middleware('auth');
-Route::get('/post-designs-requirement', [RequirementController::class, 'design'])->name('post.design.requirement')->middleware('auth');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth', 'is_admin');
+Route::get('/post-products-requirement', [RequirementController::class, 'product'])->name('post.product.requirement')->middleware('auth', 'verified');
+Route::get('/post-designs-requirement', [RequirementController::class, 'design'])->name('post.design.requirement')->middleware('auth', 'verified');
 
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth', 'is_admin', 'verified');
+//Jobs
+Route::get('/jobs', [VacancyController::class, 'index'])->name('job')->middleware('auth', 'verified');
+Route::get('/job-new', [VacancyController::class, 'create'])->name('job.create')->middleware('auth', 'verified');
+Route::get('/job/{id}', [VacancyController::class, 'show'])->name('job.show')->middleware('auth', 'verified');
+
+//Profile
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             {{-- intro screen --}}
-            <div class="col-md-4 text-white" style="height: 100vh; background-image: url('{{ asset("general/imgs/intro_bg.jpg") }}'); background-size: cover;">
+            <div class="col-md-4 hide-from-mobile text-white" style="height: 100vh; background-image: url('{{ asset("general/imgs/intro_bg.jpg") }}'); background-size: cover;">
                 <div style="height: 50vh">
                     <div class="d-flex p-5">
                         <img height="100px" width="100px" src="{{ asset('general/imgs/BUILDBETA_LOGO_2_PNG.png') }}" alt="">
@@ -27,13 +27,13 @@
             {{-- text and button to the right --}}
                 <div class="d-flex justify-content-end">
                     <div class="p-5">
-                        <p class="text-center">Don't have an account? <a href="{{ route('register') }}" class="border border-primary text-primary">Sign up</a></p>
+                        <p class="text-center">Don't have an account? <a href="{{ route('welcome') }}" class="border border-primary text-primary">Sign up</a></p>
                     </div>
                 </div>
             {{-- end text and button to the right --}}
             {{-- form --}}
                 <div class="col-md-6 offset-md-3">
-                    <div class="pt-2 pb-2">
+                    <div class="pt-2 pb-5">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
@@ -43,6 +43,7 @@
                                 <p>Thank you for being here</p>
                             </div>
 
+                            {{-- email input with user icon on the left --}}
                             <div class="mb-3">
                                 <input 
                                 type="email" 
@@ -51,6 +52,7 @@
                                 id="email" name="email" 
                                 aria-describedby="emailHelp" 
                                 placeholder="Your email">
+
                                 @if ($errors->has('email'))
                                     <div id="emailHelp" class="form-text text-danger">
                                         <div>{{ $errors->first('email') }}</div>
@@ -88,7 +90,7 @@
                                         <span class="custom-switch-description">Remember me</span>
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            <button type="submit" class="btn btn-primary bb-bg-btn w-100">Submit</button>
                         </form>
                     </div>
                 </div>

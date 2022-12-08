@@ -1,9 +1,14 @@
 @extends('layouts.app')
     @section('content')
+    <style>
+        .mobile-tab {
+            display: none !important;
+        }
+    </style>
     <div class="my-5 mt-1">
         <div class="row">
-            <div class="col-md-7 col-12">
-                <div class="card shadow-sm border-0">
+            <div class="col-md-6">
+                <div class="card shadow border-0">
                         <div class="card-body">
                             <img src="{{ asset('general/imgs/icons/ellipse.svg') }}" alt="Logo">
                             <h5 class="card-title" style="font-style: normal; font-weight: 600; font-size: 16px; line-height: 160%;">Card title</h5>
@@ -15,8 +20,8 @@
                 </div>
             </div>
 
-            <div class="col-md-7 col-12">
-                <div class="card shadow-sm border-0">
+            <div class="col-md-6">
+                <div class="card shadow border-0">
                         <div class="card-body">
                             <img src="{{ asset('general/imgs/icons/ellipse.svg') }}" alt="Logo">
                             <h5 class="card-title" style="font-style: normal; font-weight: 600; font-size: 16px; line-height: 160%;">Card title</h5>
