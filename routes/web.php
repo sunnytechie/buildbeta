@@ -2,29 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarketController;
+use App\Http\Controllers\SellerController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VacancyController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Api\VacancyController;
 use App\Http\Controllers\PersonalizeController;
 use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//Auth Bbforce Reg
-Route::get('/bbforce-register', [RegisteredUserController::class, 'createBbforce'])->middleware('guest')->name('bbforce.register');
-//Auth Seller Reg
-Route::get('/seller-register', [RegisteredUserController::class, 'createSeller'])->middleware('guest')->name('seller.register');
+//Auth Bbforce & Seller Reg
 Route::get('/welcome', [PersonalizeController::class, 'welcome'])->name('welcome');
+Route::get('/bbforce-register', [RegisteredUserController::class, 'createBbforce'])->middleware('guest')->name('bbforce.register');
+Route::get('/seller-register', [RegisteredUserController::class, 'createSeller'])->middleware('guest')->name('seller.register');
 
 Route::get('/personalize-search', [PersonalizeController::class, 'create'])->name('create.personalize')->middleware('auth', 'verified');
 Route::post('/personalize', [PersonalizeController::class, 'store'])->name('store.personalize')->middleware('auth');
@@ -35,23 +25,34 @@ Route::get('/browse-product', [MarketController::class, 'browse'])->name('browse
 Route::get('/post-products-requirement', [RequirementController::class, 'product'])->name('post.product.requirement')->middleware('auth', 'verified');
 Route::get('/post-designs-requirement', [RequirementController::class, 'design'])->name('post.design.requirement')->middleware('auth', 'verified');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth', 'is_admin', 'verified');
 //Jobs
 Route::get('/jobs', [VacancyController::class, 'index'])->name('job')->middleware('auth', 'verified');
 Route::get('/job-new', [VacancyController::class, 'create'])->name('job.create')->middleware('auth', 'verified');
 Route::get('/job/{id}', [VacancyController::class, 'show'])->name('job.show')->middleware('auth', 'verified');
 
-//Profile
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+//User Profile
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth', 'verified');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth', 'verified');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy')->middleware('auth', 'verified');
 
-//resource routes for catergories
-Route::resource('categories', 'App\Http\Controllers\CategoryController')->middleware('auth', 'is_admin');
-//resource routes for subcategories
-Route::resource('subcategories', 'App\Http\Controllers\SubcategoryController')->middleware('auth', 'is_admin');
-//resource routes for vacancies
+//Seller Dashboard
+Route::get('/service-provider-dashboard/{id}', [SellerController::class, 'index'])->name('seller.dashboard')->middleware('auth', 'is_seller', 'verified');
+
+
+//Bbforce Dashboard
+
+
+//Admin Dashboard
+Route::middleware('auth', 'is_admin', 'verified')->group(function () {
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::resource('categories', 'App\Http\Controllers\CategoryController');
+Route::resource('subcategories', 'App\Http\Controllers\SubcategoryController');
+Route::resource('products', 'App\Http\Controllers\ProductController');
+//unpublish products
+Route::post('/products/unpublish/{id}', [ProductController::class, 'unpublish'])->name('products.unpublish');
+//publish products
+Route::post('/products/publish/{id}', [ProductController::class, 'publish'])->name('products.publish');
+Route::resource('providers', 'App\Http\Controllers\ProviderController');
+});
 
 require __DIR__.'/auth.php';

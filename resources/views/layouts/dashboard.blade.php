@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+<head>
         <!-- META DATA -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
@@ -51,7 +51,7 @@
     <link href="{{ asset('main/assets/switcher/demo.css') }}" rel="stylesheet">
         <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
+</head>
     
     <body class="app sidebar-mini ltr light-mode">
 
@@ -70,7 +70,7 @@
         
                 <div class="main-content app-content mt-0">
                     <div class="side-app">
-    
+                        
                         <!-- CONTAINER -->
                         <div class="main-container container-fluid">
                             @yield('content')
@@ -82,6 +82,19 @@
 
             </div>
         </div>
+
+        {{-- notification --}}
+        @if (session('message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="z-index: 999; max-width: 250px; position: fixed; right: 35px; top: 70px; background-color: #0080E6; color: #fff; cursor: pointer;">
+            <div><strong>Info:</strong> 
+                {{ session('message') }}
+             </div>
+            {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <i class="icon icon-close"></i>
+            </button> --}}
+        </div>
+        @endif
+        {{-- notification --}}
     
 
     @include('dashboard.partials.footer')
@@ -173,7 +186,34 @@
     <script src="{{ asset('main/assets/js/custom-swicher.js') }}"></script>
 
     <!-- Switcher js -->
-    <script src="{{ asset('main/assets/switcher/js/switcher.js"') }}></script>
+    <script src="{{ asset('main/assets/switcher/js/switcher.js') }}"></script>
 
+    <!-- FILE UPLOADES JS -->
+    <script src="{{ asset('main/assets/plugins/fileuploads/js/fileupload.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/fileuploads/js/file-upload.js') }}"></script>
+
+    <!-- INTERNAL File-Uploads Js-->
+    {{-- <script src="{{ asset('main/assets/plugins/fancyuploder/jquery.ui.widget.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/fancyuploder/jquery.fileupload.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/fancyuploder/jquery.iframe-transport.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/fancyuploder/jquery.fancy-fileupload.js') }}"></script> --}}
+    <script src="{{ asset('main/assets/plugins/fancyuploder/fancy-uploader.js') }}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".alert").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+
+    {{-- hide alert after 3o seconds --}}
+    <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 5000);
+    </script>
     </body>
 </html>

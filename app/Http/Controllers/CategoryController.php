@@ -103,6 +103,9 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->delete();
 
+        //Also delete all subcategories
+        $category->subcategories()->delete();
+
         return back()->with('message', "Category has been deleted successfully.");
     }
 }

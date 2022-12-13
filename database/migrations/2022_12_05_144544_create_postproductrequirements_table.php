@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('no_of_qoutations')->nullable();
             $table->text('product_you_inquire')->nullable();
             $table->text('attachment')->nullable();
+            
             $table->timestamps();
         });
     }

@@ -86,7 +86,7 @@
                                                     <form method="post" action="{{ route('categories.destroy', $category->id) }}">
                                                         @method('delete')
                                                         @csrf
-                                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this Category?')" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this Category?')" class="btn btn-sm btn-danger" style="border-top-left-radius: 0; border-bottom-left-radius: 0"><i class="fa fa-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>

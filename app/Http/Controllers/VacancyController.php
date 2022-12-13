@@ -11,9 +11,9 @@ class VacancyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+
+    public function index() {
+        return view('vacancy.job');
     }
 
     /**
@@ -24,6 +24,7 @@ class VacancyController extends Controller
     public function create()
     {
         //
+        return view('vacancy.create');
     }
 
     /**
@@ -46,6 +47,7 @@ class VacancyController extends Controller
     public function show($id)
     {
         //
+        return view('vacancy.show');
     }
 
     /**

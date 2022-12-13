@@ -13,11 +13,12 @@
                         <li><a href="#"><ion-icon name="compass-outline" class="mr-2"></ion-icon> Lands</a></li>
                         <li><a href="#"><ion-icon name="podium-outline" class="mr-2"></ion-icon> Services</a></li>
                         <li><a href="#"><ion-icon name="people-outline" class="mr-2"></ion-icon> Artisans</a></li>
+                        <li><a href="#"><ion-icon name="people-outline" class="mr-2"></ion-icon> Others</a></li>
                     </ul>
 
-                    <a href="#" class="btn btn-block btn-dark btn-lg px-0 ls-10">Huge Deal -
+                    {{-- <a href="#" class="btn btn-block btn-dark btn-lg px-0 ls-10">Huge Deal -
                         <strong>25%</strong>
-                        Off</a>
+                        Off</a> --}}
                 </div>
                 <!-- End .side-menu-body -->
             </div>

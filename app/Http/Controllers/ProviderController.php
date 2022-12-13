@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Provider;
 use Illuminate\Http\Request;
 
 class ProviderController extends Controller
@@ -13,7 +14,9 @@ class ProviderController extends Controller
      */
     public function index()
     {
-        //
+        //index
+        $providers = Provider::all();
+        return view('dashboard.providers.index', compact('providers'));
     }
 
     /**
@@ -34,7 +37,20 @@ class ProviderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        //store
+        $provider = new Provider();
+        $provider->title = $request->title;
+        $provider->description = $request->description;
+        $provider->save();
+
+        //redirect
+        return redirect()->route('providers.index')->with('message', 'Provider created successfully.');
     }
 
     /**
@@ -68,7 +84,20 @@ class ProviderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validate
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        //update
+        $provider = Provider::find($id);
+        $provider->title = $request->title;
+        $provider->description = $request->description;
+        $provider->save();
+
+        //redirect
+        return redirect()->route('providers.index')->with('message', 'Provider updated successfully.');
     }
 
     /**
@@ -79,6 +108,11 @@ class ProviderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //delete
+        $provider = Provider::find($id);
+        $provider->delete();
+
+        //redirect
+        return redirect()->route('providers.index')->with('message', 'Provider deleted successfully.');
     }
 }

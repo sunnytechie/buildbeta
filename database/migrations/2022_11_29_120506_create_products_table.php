@@ -20,10 +20,18 @@ return new class extends Migration
             $table->text('description');
             $table->string('price')->nullable();
             $table->text('image');
-            $table->text('thumbnail');
+            $table->text('thumbnail')->nullable();
+            $table->text('thumbnail1')->nullable();
+            $table->text('thumbnail2')->nullable();
+            $table->text('thumbnail3')->nullable();
+            $table->text('thumbnail4')->nullable();
+            $table->text('thumbnail5')->nullable();
             $table->string('category_id');
+            $table->string('category_title')->nullable();
             $table->string('subcategory_id')->nullable();
+            $table->string('subcategory_title')->nullable();
             $table->string('provider_id')->nullable();
+            $table->string('publish')->default(0);
 
             $table->timestamps();
         });

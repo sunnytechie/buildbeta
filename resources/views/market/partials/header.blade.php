@@ -17,10 +17,11 @@
                                     <li><a href="{{ route('dashboard') }}">Admin Dashboard</a></li>
                                     @endif
                                 @endif
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                
+                                <li><a href="#">Help Center</a></li>
+                                <li><a href="#">Get the App</a></li>
                                 {{-- <li><a href="wishlist.html">My Wishlist</a></li> --}}
-                                <li><a href="#" class="login-link">Log In</a></li>
+                                {{-- <li><a href="#" class="login-link">Log In</a></li> --}}
                             </ul>
                         </div>
                         <!-- End .header-menu -->
@@ -84,46 +85,76 @@
 
                 {{-- Tablet and Mobile --}}
                 <div class="header-right w-lg-max ml-0 px-0">
-                        <div class="header-icon mb-0 show-only-mobile">
-                            <a href="#" role="button" title="Search"><i
-                                class="icon-search-3 mx-2"></i></a>
-                        </div>
-                            <!-- End .header-icon -->
 
-                    <div class="header-icon mb-0 header-search header-search-inline header-search-category w-lg-max pl-3 pr-1">
+                    <div class="header-icon mb-0 show-only-mobile">
+                        <a href="#" role="button" title="Search"><i
+                            class="icon-search-3 mx-2"></i></a>
+                    </div>
+                        <!-- End .header-icon -->
+
+                    <div class="header-icon mb-0 header-search first-header header-search-inline header-search-category w-lg-max pl-3 pr-1">
                         <a href="#" class="search-toggle" role="button" title="Search"><i
                                 class="icon-search-3"></i></a>
-                        <form action="#" method="get">
+                        <form action="#" method="get" style="width: 600px">
                             <div class="header-search-wrapper">
-                                <input type="search" class="form-control bg-white" name="q" id="qq" placeholder="Search..." required>
-                                <div class="select-custom bg-white">
+                                <input type="search" class="form-control first-input" name="q" id="qq" placeholder="Search..." required style="background: transparent; border: 0.2rem solid #FFFFFF; color: #FFF; border-radius: 0;">
+                                <div class="select-custom">
                                     <select id="category" name="cat">
                                         <option>All Categories</option>
                                         <option>Constructions</option>
                                     </select>
                                 </div>
                                 <!-- End .select-custom -->
-                                <button class="btn icon-magnifier pb-1 bg-white" type="submit" title="Search"></button>
+                                <button class="btn btn-icon icon-magnifier pb-1 bg-white" type="submit" title="Search"></button>
                             </div>
                             <!-- End .header-search-wrapper -->
                         </form>
                     </div>
                     <!-- End .header-search -->
 
-                    <div class="header-contact d-none d-lg-flex pl-4 ml-3 mr-xl-5">
-                        <img alt="phone" src="{{ asset('general/imgs/247call.svg') }}" width="40" height="40" class="pb-1">
-                        <h6>Call us now<a href="tel:#" class="font1">+234 809 782 0902</a></h6>
+                    <div class="header-contact d-none d-lg-flex pl-0 ml-3 mr-xl-4">
+                    <div class="header-icon mb-0">
+                        <a href="#">
+                            <ion-icon name="duplicate-outline" style="font-size: 22px"></ion-icon>
+                        </a>
+                    </div>
+                    
+                    <div class="header-icon mb-0">
+                        <a href="#">
+                            <ion-icon name="notifications-outline" style="font-size: 22px"></ion-icon>
+                        </a>
+                    </div>
                     </div>
                     
                     @if (Auth::guest())
                     <a href="{{ route('login') }}" class="header-icon d-inline-block" title="Login">
-                        <i class="icon-user-2"></i>
+                        <ion-icon name="log-in-outline" style="font-size: 22px">></ion-icon>
                     </a>
                     @else
-                    <a href="#" class="header-icon d-inline-block" title="Login">
-                        <i class="icon-user-2"></i>
-                    </a>
+                    <div class="dropdown profile-dropdown">
+                        <div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer">
+                            <img height="40" width="40" class="rounded-circle" src="{{ asset('general/imgs/black-man-4699506_1920.jpg') }}" alt="">
+                        </div>
+                        
+                        <div class="dropdown-menu shadow-md">
+                            <div class="px-4 py-2">
+                                <img height="25" width="25" class="rounded-circle" src="{{ asset('general/imgs/black-man-4699506_1920.jpg') }}" alt="">
+                                <br><span style="font-size: 14px; font-weight:500; line-height: 1px">{{ Auth::user()->name }}</span><br>
+                                <span>{{ Auth::user()->email }}</span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="#"><ion-icon name="chatbubbles-outline"></ion-icon> Help center</a>
+                            <a class="dropdown-item" href="#"><ion-icon name="cloud-download-outline"></ion-icon> Get the App</a>
+                            <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
+                        </div>
+                        
+                    </div>
                     @endif
+
+                    
 
                 </div>
                 <!-- End .header-right -->
@@ -262,8 +293,9 @@
                             </li> --}}
 
                             {{-- Right links --}}
-                            <li class="float-right"><a href="#" class="pl-5" target="_blank">Find Need</a></li>
-                            <li class="float-right mr-3"><a href="#" class="pl-5">Post Need</a></li>
+                            <li class="float-right"><a href="#" class="pl-1" target="_blank">Find Need</a></li>
+                            <li class="float-right"><a href="#" class="pl-1">Post Need</a></li>
+                            <li class="float-right"><a href="#" class="pl-1" target="_blank">Post Jobs</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -271,10 +303,13 @@
                 {{-- Desktop right --}}
                 <div class="header-right px-0">
                     <div class="header-search header-icon header-search-inline header-search-category w-lg-max">
-                        <a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
+                        <a href="#" class="search-toggle" role="button">
+                            <ion-icon name="search-outline" style="font-size: 22px"></ion-icon>
+                        </a>
+                        
                         <form action="#" method="get">
                             <div class="header-search-wrapper">
-                                <input type="search" class="form-control" name="q" id="qqq" placeholder="Search..." required>
+                                <input type="search" class="form-control scroll-search" name="q" id="qqq" placeholder="Search..." required>
                                 <div class="select-custom">
                                     <select id="cat" name="cat">
                                         <option>All Categories</option>
@@ -289,14 +324,46 @@
                     </div>
                     <!-- End .header-search -->
 
+                    <div class="header-contact d-none d-lg-flex pl-0 ml-3 mr-xl-4">
+                        <div class="header-icon mb-0">
+                            <a href="#">
+                                <ion-icon name="duplicate-outline" style="font-size: 22px"></ion-icon>
+                            </a>
+                        </div>
+                        
+                        <div class="header-icon mb-0">
+                            <a href="#">
+                                <ion-icon name="notifications-outline" style="font-size: 22px"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
                     @if (Auth::guest())
                     <a href="{{ route('login') }}" class="header-icon" title="Login">
-                        <i class="icon-user-2"></i>
+                        <ion-icon name="log-in-outline" style="font-size: 22px">></ion-icon>
                     </a>
                     @else
-                    <a href="#" class="header-icon" title="Login">
-                        <i class="icon-user-2"></i>
-                    </a>
+                    <div class="dropdown profile-dropdown">
+                        <div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer">
+                            <img height="40" width="40" class="rounded-circle" src="{{ asset('general/imgs/black-man-4699506_1920.jpg') }}" alt="">
+                        </div>
+                        
+                        <div class="dropdown-menu shadow-md">
+                            <div class="px-4 py-2">
+                                <img height="25" width="25" class="rounded-circle" src="{{ asset('general/imgs/black-man-4699506_1920.jpg') }}" alt="">
+                                <br><span style="font-size: 14px; font-weight:500; line-height: 1px">{{ Auth::user()->name }}</span><br>
+                                <span>{{ Auth::user()->email }}</span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="#"><ion-icon name="chatbubbles-outline"></ion-icon> Help center</a>
+                            <a class="dropdown-item" href="#"><ion-icon name="cloud-download-outline"></ion-icon> Get the App</a>
+                            <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
+                        </div>
+                        
+                    </div>
                     @endif
 
                     <!-- End .dropdown -->

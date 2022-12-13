@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,9 @@ class SubcategoryController extends Controller
     {
         //index
         $subcategories = Subcategory::all();
-        return view('subcategories.index', compact('subcategories'));
+        $categories = Category::all();
+        
+        return view('subcategories.index', compact('subcategories', 'categories'));
     }
 
     /**
@@ -37,7 +40,22 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate request
+        $request->validate([
+            'title' => 'required',
+            'category_id' => 'required',
+        ]);
+
+        //dd($request->all());
+
+        //store
+        $subcategory = new Subcategory();
+        $subcategory->title = $request->title;
+        $subcategory->category_id = $request->category_id;
+        $subcategory->save();
+
+        //redirect with message
+        return redirect()->route('subcategories.index')->with('message', 'Subcategory created successfully');
     }
 
     /**
@@ -71,7 +89,22 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validate request
+        $request->validate([
+            'title' => 'required',
+            'category_id' => 'required',
+        ]);
+
+        //dd($request->all());
+
+        //update
+        $subcategory = Subcategory::find($id);
+        $subcategory->title = $request->title;
+        $subcategory->category_id = $request->category_id;
+        $subcategory->save();
+
+        //redirect with message
+        return redirect()->route('subcategories.index')->with('message', 'Subcategory updated successfully');
     }
 
     /**
@@ -82,6 +115,11 @@ class SubcategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //delete
+        $subcategory = Subcategory::find($id);
+        $subcategory->delete();
+
+        //redirect with message
+        return redirect()->route('subcategories.index')->with('message', 'Subcategory deleted successfully');
     }
 }

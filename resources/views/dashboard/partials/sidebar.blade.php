@@ -93,12 +93,21 @@
                             class="side-menu__label">Category</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{ route('subcategories.index') }}"><i
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('subcategories.index'))
+                        active
+                    @endif" 
+                    data-bs-toggle="slide" href="{{ route('subcategories.index') }}"><i
                             class="side-menu__icon fe fe-list"></i><span
                             class="side-menu__label">Sub Category</span></a>
                 </li>
+
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('products.index'))
+                        active
+                    @endif"  
+                    data-bs-toggle="slide" href="{{ route('products.index') }}"><i
                             class="side-menu__icon fe fe-database"></i><span
                             class="side-menu__label">Products</span></a>
                 </li>
@@ -108,15 +117,21 @@
                     <h3>User</h3>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('providers.index'))
+                        active
+                    @endif"
+                    data-bs-toggle="slide" href="{{ route('providers.index') }}"><i
                             class="side-menu__icon fe fe-user-check"></i><span
                             class="side-menu__label">Provider Category</span></a>
                 </li>
+
                 <li class="slide">
                     <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
                             class="side-menu__icon fe fe-shopping-cart"></i><span
                             class="side-menu__label">Buyer</span></a>
                 </li>
+
                 <li class="slide">
                     <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
                             class="side-menu__icon fe fe-truck"></i><span
@@ -138,23 +153,46 @@
                             class="side-menu__icon fe fe-credit-card"></i><span
                             class="side-menu__label">Transactions</span></a>
                 </li>
+
                 <li class="slide">
                     <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
                             class="side-menu__icon fe fe-more-horizontal"></i><span
                             class="side-menu__label">Progressing</span></a>
                 </li>
+
                 <li class="slide">
                     <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
                             class="side-menu__icon fe fe-check"></i><span
                             class="side-menu__label">Completed</span></a>
                 </li>
+                
                 <li class="slide">
                     <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
                             class="side-menu__icon fe fe-activity"></i><span
                             class="side-menu__label">Analytics</span></a>
                 </li>
 
+                <li class="sub-category">
+                    <h3>Requests</h3>
+                </li>
 
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                            class="side-menu__icon fe fe-trending-up"></i><span
+                            class="side-menu__label">Post Product Need</span></a>
+                </li>
+
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                            class="side-menu__icon fe fe-grid"></i><span
+                            class="side-menu__label">Post Design Need</span></a>
+                </li>
+
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                            class="side-menu__icon fe fe-search"></i><span
+                            class="side-menu__label">Find Need</span></a>
+                </li>
 
                 <li class="sub-category">
                     <h3>Others</h3>

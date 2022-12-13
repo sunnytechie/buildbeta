@@ -34,6 +34,7 @@ class SellerController extends Controller
      */
     public function store(Request $request)
     {
+        //Note that user must provide all credential before they can have is_seller set to true
         //
     }
 
