@@ -87,9 +87,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Models\Personalize');
     }
 
-    //belongsTo provider
-    public function provider()
+    //hasMany providers
+    public function providers()
     {
-        return $this->belongsTo('App\Models\Provider');
+        return $this->hasMany('App\Models\Provider');
     }
 }

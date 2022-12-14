@@ -17,10 +17,10 @@ class Provider extends Model
         return $this->hasMany('App\Models\Product');
     }
 
-    //has many users
-    public function users()
+    //belongs to user
+    public function user()
     {
-        return $this->hasMany('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     //has many sellers

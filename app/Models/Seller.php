@@ -17,10 +17,10 @@ class Seller extends Model
         return $this->hasMany('App\Models\Product');
     }
 
-    //has one provider
+    //belongs to provider
     public function provider()
     {
-        return $this->hasOne('App\Models\Provider');
+        return $this->belongsTo('App\Models\Provider');
     }
    
     //belongs to user

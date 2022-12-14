@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BbforceController extends Controller
@@ -13,7 +14,10 @@ class BbforceController extends Controller
      */
     public function index()
     {
-        //
+        //index of all bbforce users
+        $bbforceUsers = User::where('is_bbforce', true)->get();
+
+        return view('dashboard.bbforce.index', compact('bbforceUsers'));
     }
 
     /**

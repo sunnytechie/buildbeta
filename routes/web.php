@@ -10,6 +10,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PersonalizeController;
 use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\BbforceController;
+use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\UserController;
 
 //Auth Bbforce & Seller Reg
 Route::get('/welcome', [PersonalizeController::class, 'welcome'])->name('welcome');
@@ -53,6 +56,18 @@ Route::post('/products/unpublish/{id}', [ProductController::class, 'unpublish'])
 //publish products
 Route::post('/products/publish/{id}', [ProductController::class, 'publish'])->name('products.publish');
 Route::resource('providers', 'App\Http\Controllers\ProviderController');
+//users that are bbforce
+Route::get('/bbforce-users', [BbforceController::class, 'index'])->name('bbforces');
+//ban users
+Route::post('/users/ban/{id}', [UserController::class, 'banUser'])->name('users.ban');
+//unban users
+Route::post('/users/unban/{id}', [UserController::class, 'unbanUser'])->name('users.unban');
+//delete users
+Route::delete('/users/delete/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+//users that are sellers
+Route::get('/seller-users', [SellerController::class, 'index'])->name('sellers');
+//users that are buyers
+Route::get('/buyer-users', [BuyerController::class, 'index'])->name('buyers');
 });
 
 require __DIR__.'/auth.php';

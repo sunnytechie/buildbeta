@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Seller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SellerController extends Controller
@@ -13,7 +15,10 @@ class SellerController extends Controller
      */
     public function index()
     {
-        //
+        //index of all sellers
+        $sellers = Seller::orderBy('id', 'desc')->get();
+
+        return view('dashboard.seller.index', compact('sellers'));
     }
 
     /**

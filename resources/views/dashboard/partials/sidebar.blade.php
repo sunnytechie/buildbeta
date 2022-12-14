@@ -127,18 +127,31 @@
                 </li>
 
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('buyers'))
+                        active
+                    @endif"
+                    data-bs-toggle="slide" href="{{ route('buyers') }}"><i
                             class="side-menu__icon fe fe-shopping-cart"></i><span
                             class="side-menu__label">Buyer</span></a>
                 </li>
 
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('sellers'))
+                        active
+                    @endif"
+                    data-bs-toggle="slide" href="{{ route('sellers') }}"><i
                             class="side-menu__icon fe fe-truck"></i><span
                             class="side-menu__label">Service Provider/Seller</span></a>
                 </li>
+
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('bbforces'))
+                        active
+                    @endif"
+                     data-bs-toggle="slide" href="{{ route('bbforces') }}"><i
                             class="side-menu__icon fe fe-star"></i><span
                             class="side-menu__label">Bbforce Member</span></a>
                 </li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BuyerController extends Controller
@@ -13,7 +14,8 @@ class BuyerController extends Controller
      */
     public function index()
     {
-        //
+        $buyers = User::where('user_type', 'buyer')->get();
+        return view('dashboard.buyer.index', compact('buyers'));
     }
 
     /**
