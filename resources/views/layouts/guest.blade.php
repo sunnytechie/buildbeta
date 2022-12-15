@@ -52,8 +52,10 @@
 
     {{-- buildbetacss --}}
     <link rel="stylesheet" href="{{ asset('market/assets/css/buildbeta.css') }}">
+    
         <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+     {{-- @vite(['resources/css/app.css', 'resources/js/app.js'])  --}}
+
 
     <style>
         .select-sign-up-bg {
@@ -103,6 +105,7 @@
         </div>
 
         
+    
     <!-- JQUERY JS -->
     <script src="{{ asset('main/assets/js/jquery.min.js') }}"></script>
 

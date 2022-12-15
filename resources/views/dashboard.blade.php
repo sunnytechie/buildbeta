@@ -258,6 +258,28 @@
                     </div>
 
 
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xl-3">
+                        <div class="card overflow-hidden">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="mt-2">
+                                        <h6 class="">Approved Product</h6>
+                                        <h2 class="mb-0 number-font">xxx,xxx</h2>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="chart-wrapper mt-1">
+                                            <img height="70" width="70" src="{{ asset('general/imgs/icons/product.svg') }}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-muted fs-12"><span class="text-green"><i
+                                            class="fe fe-arrow-up-circle text-green"></i> xxx</span>
+                                    Last 10 days</span>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>

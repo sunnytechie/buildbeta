@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-md-9 col-8">
-                <div class="d-flex justify-between mb-1">
+                <div class="d-flex justify-content-between mb-1">
                     <div class="title text-black">Interior Designs</div>
                     <div class="link" style="color: #0080E6"><a href="#">See More</a></div>
                 </div>
