@@ -31,6 +31,11 @@ body {
     opacity: 1; /* Firefox */
   }
 
+  .mobile form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff !important;
+    opacity: 1; /* Firefox */
+  }
+
   /* .header-search .select-custom {
     border-left: 0 !important;
     border-right: 0 !important;
