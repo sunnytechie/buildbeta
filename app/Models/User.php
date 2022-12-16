@@ -92,4 +92,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany('App\Models\Provider');
     }
+
+    //hasMany escrows
+    public function escrows()
+    {
+        return $this->hasMany('App\Models\Escrow');
+    }
 }

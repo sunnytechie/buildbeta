@@ -23,24 +23,21 @@
                 </div>
             </div>
 
-            <div class="col-md-8" style="height: 100vh">
-            {{-- text and button to the right --}}
+            <div class="col-md-8">
                 <div class="d-flex justify-content-end">
                     <div class="p-5">
                         <p class="text-center">Don't have an account? <a href="{{ route('welcome') }}" class="border border-primary text-primary">Sign up</a></p>
                     </div>
                 </div>
-            {{-- end text and button to the right --}}
-            {{-- form --}}
                 <div class="col-md-6 offset-md-3">
-                    <div class="pt-2 pb-5">
+                    <div class="pt-5 pb-5">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
                             {{-- header --}}
                             <div class="justify-content-start mb-5">
                                 <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 25px;">Welcome to Build</span><span>Beta</span></h4>
-                                <p>Thank you for being here</p>
+                                <p style="font-size: 12px">Thank you for being here.</p>
                             </div>
 
                             {{-- email input with user icon on the left --}}

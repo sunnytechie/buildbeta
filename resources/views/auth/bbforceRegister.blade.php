@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="col-md-8" style="height: 100vh">
+            <div class="col-md-8">
             {{-- text and button to the right --}}
                 <div class="d-flex justify-content-between">
                     {{-- Arrow Back to welcome --}}
@@ -33,7 +33,7 @@
                         </a>
                     </div>
                     <div class="pt-5 pb-1">
-                        <p class="text-center">Already have an account? <a href="{{ route('login') }}" class="border border-primary text-primary">Log in</a></p>
+                        <p class="text-center" style="font-size: 12px">Already have an account? <a href="{{ route('login') }}" class="border border-primary text-primary">Log in</a></p>
                     </div>
                 </div>
             {{-- end text and button to the right --}}
@@ -47,8 +47,8 @@
                             <input type="hidden" name="user_type" value="bbforce">
                             {{-- header --}}
                             <div class="justify-content-start mb-5">
-                                <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 160%; font-style: normal; font-size: 25px;">Welcome to Build</span><span>Beta</span></h4>
-                                <p>Thank you for being here</p>
+                                <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 100%; font-style: normal; font-size: 25px;">Welcome to Build</span><span>Beta</span></h4>
+                                <p style="font-size: 12px">Thank you for being here.</p>
                             </div>
 
                             {{-- two col in a row input name and username --}}
