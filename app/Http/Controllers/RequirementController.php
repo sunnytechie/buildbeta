@@ -15,4 +15,24 @@ class RequirementController extends Controller
     {
         return view('requirements.design');
     }
+    
+    public function findProduct()
+    {
+        return view('requirements.findProduct');
+    }
+
+    public function findDesign()
+    {
+        return view('requirements.findDesign');
+    }
+
+    public function showProduct($id)
+    {
+        return view('requirements.showProduct');
+    }
+
+    public function showDesign($id)
+    {
+        return view('requirements.showDesign');
+    }
 }

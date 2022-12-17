@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Escrow;
 use Illuminate\Http\Request;
 
 class EscrowController extends Controller
@@ -13,7 +14,10 @@ class EscrowController extends Controller
      */
     public function index()
     {
-        //
+        //escrows
+        $escrows = Escrow::all();
+
+        return view('dashboard.escrows.index', compact('escrows'));
     }
 
     /**

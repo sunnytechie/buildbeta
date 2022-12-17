@@ -1,7 +1,7 @@
 @extends('layouts.app')
     @section('content')
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-4">
                 
                 <form class="shadow px-4 pt-1 pb-4" action="#" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -10,8 +10,20 @@
                     <div class="form-group">
                         <input type="text" name="requirement_title" id="requirement_title" class="form-control" placeholder="Requirement Title" style="font-size: 14px">
                     </div>
+                    {{-- Select design_service_type --}}
                     <div class="form-group">
-                        <input type="text" name="design_service_type" id="design_service_type" class="form-control" placeholder="Design Service Type" style="font-size: 14px">
+                        <select name="design_service_type" id="design_service_type" class="form-control">
+                            <option value="">Select Design Service Type</option>
+                            <option value="1">Architectural Design</option>
+                            <option value="2">Interior Design</option>
+                            <option value="3">Landscape Design</option>
+                            <option value="4">Building Design</option>
+                            <option value="5">Structural Design</option>
+                            <option value="6">Electrical Design</option>
+                            <option value="7">Mechanical Design</option>
+                            <option value="8">Civil Design</option>
+                            <option value="9">Other</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input type="text" name="grade_of_decoration" id="grade_of_decoration" class="form-control" placeholder="Grade of Decoration" style="font-size: 14px">
@@ -34,6 +46,10 @@
                         <button type="submit" class="btn bb-bg-btn w-100">Post</button>
                     </div>
                 </form>
+            </div>
+
+            <div class="col-md-8">
+                List of deigns sent to this plateform.
             </div>
         </div>
     @endsection

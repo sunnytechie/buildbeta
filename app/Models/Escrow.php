@@ -33,6 +33,7 @@ class Escrow extends Model
         'status',
         'transaction_reference',
         'transaction_fee',
+        'payment_method',
     ];
 
     //belongs to user

@@ -1,7 +1,7 @@
 @extends('layouts.app')
     @section('content')
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-4">
                 
                 <form class="shadow px-4 pt-1 pb-4" action="#" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -70,8 +70,8 @@
                 </form>
             </div>
 
-            <div class="col-md-5">
-                List of Requirements sent last 30 days
+            <div class="col-md-8">
+                List of Requirements sent.
             </div>
         </div>
 

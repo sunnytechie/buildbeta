@@ -162,7 +162,11 @@
                     <h3>Escrow Transactions</h3>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('escrows.index'))
+                        active
+                    @endif"
+                     data-bs-toggle="slide" href="{{ route('escrows.index') }}"><i
                             class="side-menu__icon fe fe-credit-card"></i><span
                             class="side-menu__label">Transactions</span></a>
                 </li>

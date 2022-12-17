@@ -31,7 +31,7 @@ class ProductController extends Controller
         $product->publish = 1;
         $product->save();
         //redirect
-        return redirect()->route('products.index')->with('message', 'Product published successfully.');
+        return redirect()->back()->with('message', 'Product published successfully.');
     }
 
     public function unpublish($id)
@@ -42,7 +42,7 @@ class ProductController extends Controller
         $product->publish = 0;
         $product->save();
         //redirect
-        return redirect()->route('products.index')->with('message', 'Product unpublished successfully.');
+        return redirect()->back()->with('message', 'Product unpublished successfully.');
     }
 
     /**

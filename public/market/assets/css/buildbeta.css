@@ -89,18 +89,22 @@ body {
     padding: 5px 10px !important;
   }
 
+  select.form-control:not([size]):not([multiple]) {
+    height: 4.5rem !important;
+  }
+
   [type=text], [type=email], [type=url], [type=password], [type=number], [type=date], [type=datetime-local], [type=month], [type=search], [type=tel], [type=time], [type=week], [multiple], textarea, select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
     background-color: #fff;
     border-color: #6b7280;
-    border-width: 0.1rem;
-    border-radius: 0;
-    padding: 0.5rem 0.75rem;
+    border-width: 0.1rem !important;
+    border-radius: 0 !important;
+    padding: 0.2rem 0.75rem;
     font-size: 13px;
     line-height: 1.5rem;
-    --tw-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000 !important;
 }
 
 
@@ -111,7 +115,13 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 /* when input is focused */
 [type=text]:focus, [type=email]:focus, [type=url]:focus, [type=password]:focus, [type=number]:focus, [type=date]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=search]:focus, [type=tel]:focus, [type=time]:focus, [type=week]:focus, [multiple]:focus, textarea:focus, select:focus {
-    outline: 0;
+    outline: 0 !important;
     border-color: #0080E6;
-    border-width: 0.1rem;
+    border-width: 0.1rem !important;
+}
+
+.form-group [type=text]:focus, [type=email]:focus, [type=url]:focus, [type=password]:focus, [type=number]:focus, [type=date]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=search]:focus, [type=tel]:focus, [type=time]:focus, [type=week]:focus, [multiple]:focus, textarea:focus, select:focus {
+  outline: 0 !important;
+  border-color: #0080E6 !important;
+  border-width: 0.1rem !important;
 }

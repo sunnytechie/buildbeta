@@ -212,9 +212,8 @@
                                                         <div class="modal-header">
                                                             <h6 class="modal-title">Edit product</h6><button aria-label="Close" class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                                                         </div>
-                                                        <form action="{{ route('products.update', $product->id) }}" method="POST">
+                                                        <form action="{{ route('products.publish', $product->id) }}" method="POST">
                                                             @csrf
-                                                            @method('put')
 
                                                         <div class="modal-body">
 
@@ -223,7 +222,7 @@
                                                                 <label for="image">
                                                                     <img src="{{ asset('storage/'.$product->image) }}" alt="" width="100px" height="100px">
                                                                 </label>
-                                                                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" value="{{ $product->image, old('image') }}" required>
+                                                                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" value="{{ $product->image, old('image') }}">
                                                                 @if ($errors->has('image'))
                                                                     <div id="imageHelp" class="form-text text-danger">
                                                                         <div>{{ $errors->first('image') }}</div>
@@ -239,7 +238,6 @@
                                                                 value="{{ $product->title, old('title') }}"
                                                                 id="title" name="title" 
                                                                 aria-describedby="titleHelp"
-                                                                required
                                                                 placeholder="product Name" style="border: 1px solid rgb(63, 48, 197); border-radius: 0;">
                                                                 @if ($errors->has('title'))
                                                                     <div id="titleHelp" class="form-text text-danger">
@@ -250,7 +248,7 @@
 
                                                             {{-- category --}}
                                                             <div class="form-group">
-                                                                <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id" required>
+                                                                <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
                                                                     <option value="">Select Category</option>
                                                                     @foreach ($categories as $category)
                                                                         <option value="{{ $category->id }}" {{ $category->id == $product->category_id ? 'selected' : '' }}>{{ $category->title }}</option>
@@ -265,7 +263,7 @@
 
                                                             {{-- subcategory --}}
                                                             <div class="form-group">
-                                                                <select class="form-control @error('subcategory_id') is-invalid @enderror" name="subcategory_id" id="subcategory_id" required>
+                                                                <select class="form-control @error('subcategory_id') is-invalid @enderror" name="subcategory_id" id="subcategory_id">
                                                                     <option value="">Select Subcategory</option>
                                                                     @foreach ($sub_categories as $subcategory)
                                                                         <option value="{{ $subcategory->id }}" {{ $subcategory->id == $product->subcategory_id ? 'selected' : '' }}>{{ $subcategory->title }}</option>
@@ -284,7 +282,7 @@
                                                                 class="form-control @error('description') is-invalid @enderror" 
                                                                 id="description" name="description" 
                                                                 aria-describedby="descriptionHelp"
-                                                                required
+                                                                rows="4"
                                                                 placeholder="Description" style="border: 1px solid rgb(63, 48, 197); border-radius: 0;">{{ $product->description, old('description') }}</textarea>
                                                                 @if ($errors->has('description'))
                                                                     <div id="descriptionHelp" class="form-text text-danger">
@@ -296,7 +294,8 @@
 
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button class="btn btn-primary" type="submit">Save changes</button> <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                                                            <button class="btn btn-primary" type="submit">Approve product</button>
+                                                             <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
                                                         </div>
                                                     </form>
                                                     </div>

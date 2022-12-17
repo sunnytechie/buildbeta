@@ -57,7 +57,7 @@
 
         <!-- GLOBAL-LOADER -->
         <div id="global-loader" style="user-select: none;">
-            <img height="80" width="80" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
+            <img height="110px" width="100px" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
         </div>
         <!-- /GLOBAL-LOADER -->
 

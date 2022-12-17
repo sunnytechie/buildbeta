@@ -39,6 +39,7 @@ return new class extends Migration
             $table->text('currency');
             $table->text('status');
             $table->text('transaction_reference');
+            $table->text('payment_method');
             $table->text('transaction_fee');
 
             $table->timestamps();

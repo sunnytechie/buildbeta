@@ -27,6 +27,10 @@ Route::get('/browse-product', [MarketController::class, 'browse'])->name('browse
 
 Route::get('/post-products-requirement', [RequirementController::class, 'product'])->name('post.product.requirement')->middleware('auth', 'verified');
 Route::get('/post-designs-requirement', [RequirementController::class, 'design'])->name('post.design.requirement')->middleware('auth', 'verified');
+Route::get('/find-products-requirement', [RequirementController::class, 'findProduct'])->name('find.product.requirement');
+Route::get('/find-products-requirement/{id}', [RequirementController::class, 'showProduct'])->name('show.product.requirement');
+Route::get('/find-designs-requirement', [RequirementController::class, 'findDesign'])->name('find.design.requirement');
+Route::get('/find-designs-requirement/{id}', [RequirementController::class, 'showDesign'])->name('show.design.requirement');
 
 //Jobs
 Route::get('/jobs', [VacancyController::class, 'index'])->name('job')->middleware('auth', 'verified');
@@ -51,6 +55,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::resource('categories', 'App\Http\Controllers\CategoryController');
 Route::resource('subcategories', 'App\Http\Controllers\SubcategoryController');
 Route::resource('products', 'App\Http\Controllers\ProductController');
+Route::resource('escrows', 'App\Http\Controllers\EscrowController');
 //unpublish products
 Route::post('/products/unpublish/{id}', [ProductController::class, 'unpublish'])->name('products.unpublish');
 //publish products
