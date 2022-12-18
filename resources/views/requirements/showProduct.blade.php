@@ -15,9 +15,9 @@
                     <div class="card-body">
                         
                         <div class="d-flex justify-content-between">
-                            <div class="d-flex align-baseline>
+                            <div class="d-flex align-baseline">
                                 <img src="{{ asset('general/imgs/icons/user.svg') }}" alt="User">
-                                <p class="ml-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 16px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">John Doe</p>
+                                <p class="ml-2 mt-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 16px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">John Doe</p>
                             </div>
                             <div>
                                 {{-- dropdown --}}

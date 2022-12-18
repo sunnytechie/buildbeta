@@ -15,7 +15,7 @@
                             <h6 class="card-subtitle mb-2" style="font-style: normal; color: #000000; font-weight: 500; font-size: 14px; line-height: 160%;">Card subtitle</h6>
                             <p class="card-text mb-3" style="font-style: normal; color: #000000; font-weight: 400; font-size: 12px; line-height: 160%;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia architecto aperiam unde, iusto non suscipit nesciunt cupiditate dolores animi iste culpa numquam nulla amet quaerat qui dolorem rerum, quisquam totam.</p>
                            
-                            <a href="#" class="card-link" style="font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">See more</a>
+                            <a href="#" class="card-link" style="font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #0080E6;; text-decoration: none">See more</a>
                         </div>
                 </div>
             </div>

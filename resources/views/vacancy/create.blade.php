@@ -6,7 +6,7 @@
         }
     </style>
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-4">
                 
                 <form class="shadow px-4 pt-1 pb-4" action="#" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -54,6 +54,10 @@
                         <button type="submit" class="btn bb-bg-btn w-100">Post</button>
                     </div>
                 </form>
+            </div>
+
+            <div class="col-md-8">
+                List of jobs
             </div>
         </div>
     @endsection

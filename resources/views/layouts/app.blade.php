@@ -60,6 +60,7 @@
     <title>Buildbeta Platfofrm </title>
     <!-- Scripts -->
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+
     </head>
 
     <body>
@@ -94,6 +95,8 @@
         {{-- Bottom Mobile menu --}}
         @include('market.partials.mobile.navigator')
         {{-- Mobile Menu --}}
+
+        {{-- Search modal --}}
         
     <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
 
@@ -112,17 +115,17 @@
 
 
     <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/63939dffdaff0e1306dbcf9c/1gjsa2cke';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-        </script>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/63939dffdaff0e1306dbcf9c/1gjsa2cke';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
     <!--End of Tawk.to Script-->
     </body>
 </html>

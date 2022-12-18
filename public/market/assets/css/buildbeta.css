@@ -11,7 +11,7 @@ body {
 
 @media screen and (min-width: 480px) {
 .show-only-mobile {
-    display: none;
+    display: none !important;
 }
 }
 
