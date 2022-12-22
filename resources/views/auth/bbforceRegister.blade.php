@@ -136,7 +136,7 @@
 
                             {{-- Country select --}}
                             <div class="mb-3">
-                                <select class="form-control @error('country') is-invalid @enderror" name="country" id="country">
+                                <select class="form-control @error('country') is-invalid @enderror" name="country" id="country" style="height: 2.5rem !important">
                                     <option selected disabled>Country</option>
                                     <option value="Nigeria">Nigeria</option>
                                     <option value="Ghana">Ghana</option>
@@ -191,6 +191,7 @@
                                     type="tel" 
                                     name="phone" 
                                     id="phone" 
+                                    placeholder="Phone Number"
                                     class="form-control @error('phone') is-invalid @enderror">
                                     @if ($errors->has('phone'))
                                         <div id="textHelp" class="form-text text-danger">

@@ -58,28 +58,24 @@
                     <!-- End .widget -->
 
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-3">
                             <div class="widget">
                                 <h4 class="widget-title mb-1">Customer Service</h4>
 
                                 <div class="links link-parts row">
-                                    <ul class="link-part col-lg-6 col-md-12 mb-0">
+                                    <ul class="link-part col-lg-12 col-md-12 mb-0">
                                         <li><a href="#">About us</a></li>
                                         <li><a href="#">Contact us</a></li>
                                         <li><a href="#">My account</a></li>
                                     </ul>
-                                    <ul class="link-part col-lg-6 col-md-12">
-                                        <li><a href="#">Products</a></li>
-                                        <li><a href="#">Advanced search</a></li>
-                                        <li><a href="#">Login</a></li>
-                                    </ul>
+                                    
                                 </div>
                             </div>
                             <!-- End .widget -->
                         </div>
                         <!-- End .col-sm-6 -->
 
-                        <div class="col-sm-7">
+                        <div class="col-sm-9">
                             <div class="widget">
                                 <h4 class="widget-title mb-1">About Us</h4>
 

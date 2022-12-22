@@ -143,7 +143,7 @@
                                 <span>{{ Auth::user()->email }}</span>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('seller.dashboard', Auth::user()->id) }}">Dashboard</a>
                             <a class="dropdown-item" href="#"><ion-icon name="chatbubbles-outline"></ion-icon> Help center</a>
                             <a class="dropdown-item" href="#"><ion-icon name="cloud-download-outline"></ion-icon> Get the App</a>
                             <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
@@ -164,7 +164,7 @@
         <!-- End .header-middle -->
 
         {{-- Desktop --}}
-        <div class="header-bottom sticky-header d-lg-block d-none" data-sticky-options="{'mobile': false}">
+        <div class="header-bottom hide-from-dashboard sticky-header d-lg-block d-none" data-sticky-options="{'mobile': false}">
             <div class="container">
                 <div class="header-left">
                     <a href="#" class="logo">

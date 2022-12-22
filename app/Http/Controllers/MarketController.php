@@ -16,15 +16,22 @@ class MarketController extends Controller
         $sub_categories = Subcategory::all();
         //if user is logged in
         if(auth()->user()) {
-        $currentUser = auth()->user()->id;   
-        //find currentUser from personalize table
-            $personalize = Personalize::where('user_id', $currentUser)->first();
-            if ($personalize) {
-                //Write query here.
-                return view('buildbeta', compact('categories', 'sub_categories'));
-            } else {
-                return view('auth.personalize');
+            //check user is verified
+            if(auth()->user()->email_verified_at == null) {
+                return redirect()->route('verification.notice');
+            }else {
+                //get current user id
+                $currentUser = auth()->user()->id;
+                //find currentUser from personalize table
+                $personalize = Personalize::where('user_id', $currentUser)->first();
+                if ($personalize) {
+                    //Write query here.
+                    return view('buildbeta', compact('categories', 'sub_categories'));
+                } else {
+                    return view('auth.personalize');
+                }
             }
+       
         } else {
             return view('buildbeta', compact('categories', 'sub_categories'));
         }

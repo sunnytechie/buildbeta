@@ -95,7 +95,7 @@
     <body>
         <!-- GLOBAL-LOADER -->
         <div id="global-loader" style="user-select: none;">
-            <img height="110" width="100" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
+            <img height="80" width="70" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
         </div>
         <!-- /GLOBAL-LOADER -->
 
@@ -139,9 +139,9 @@
     <script src="{{ asset('main/assets/js/index1.js') }}"></script>
 
     <!-- INTERNAL intlTelInput js-->
-    <script src="{{ asset('main/assets/plugins/intl-tel-input-master/intlTelInput.js') }}"></script>
+    {{-- <script src="{{ asset('main/assets/plugins/intl-tel-input-master/intlTelInput.js') }}"></script>
     <script src="{{ asset('main/assets/plugins/intl-tel-input-master/country-select.js') }}"></script>
-    <script src="{{ asset('main/assets/plugins/intl-tel-input-master/utils.js') }}"></script>
+    <script src="{{ asset('main/assets/plugins/intl-tel-input-master/utils.js') }}"></script> --}}
 
     <!-- Color Theme js -->
     <script src="{{ asset('main/assets/js/themeColors.js') }}"></script>

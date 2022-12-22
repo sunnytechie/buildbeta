@@ -43,11 +43,13 @@ Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.up
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy')->middleware('auth', 'verified');
 
 //Seller Dashboard
-Route::get('/service-provider-dashboard/{id}', [SellerController::class, 'index'])->name('seller.dashboard')->middleware('auth', 'is_seller', 'verified');
-
-
+Route::get('/service-provider-dashboard', [DashboardController::class, 'seller'])->name('seller.dashboard')->middleware('auth', 'is_seller', 'verified');
+//Buyer Dashboard
+Route::get('/buyer-dashboard', [DashboardController::class, 'buyer'])->name('buyer.dashboard')->middleware('auth', 'verified');
 //Bbforce Dashboard
-
+Route::get('/bbforce-dashboard', [DashboardController::class, 'bbforce'])->name('bbforce.dashboard')->middleware('auth', 'is_bbforce', 'verified');
+//reward store
+Route::get('/reward-store', [DashboardController::class, 'reward'])->name('reward.store')->middleware('auth', 'verified');
 
 //Admin Dashboard
 Route::middleware('auth', 'is_admin', 'verified')->group(function () {

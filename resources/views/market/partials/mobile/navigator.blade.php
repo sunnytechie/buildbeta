@@ -11,7 +11,7 @@
     </div>
     <div class="sticky-info border-0" style="width: auto">
         <a href="#">
-            <img style="margin: 0 auto" height="26" width="26" src="{{ asset('general/imgs/icons/post.svg') }}" alt=""><span style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 10px; line-height: 120%; letter-spacing: -0.3px; color: #000000;">Post</span>
+            <img style="margin: 0 auto" height="26" width="26" src="{{ asset('general/imgs/icons/post.svg') }}" alt=""><span class="pl-1" style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 10px; line-height: 120%; letter-spacing: -0.3px; color: #000000;">Post</span>
         </a>
     </div>
     <div class="sticky-info border-0" style="width: auto">
