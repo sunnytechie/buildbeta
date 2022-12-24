@@ -73,11 +73,11 @@
     <div class="header-middle p-0 pb-4">
         <div class="container">
             <div class="header-left" style="width: 48%">
-                <a href="#" class="btn p-3 w-100" style="background: #fff; color: #0080E6; font-size: 14px; font-weight: 500; font-style: normal; text-transform: capitalize;">Post Needs</a>
+                <a href="{{ route('post.product.requirement') }}" class="btn p-3 w-100" style="background: #fff; color: #0080E6; font-size: 14px; font-weight: 500; font-style: normal; text-transform: capitalize;">Post Needs</a>
             </div>
 
             <div class="header-right px-0" style="width: 48%">
-                <a href="#" class="btn p-3 w-100" style="background: #fff; color: #0080E6; font-size: 14px; font-weight: 500; font-style: normal; text-transform: capitalize;">Find Needs</a>
+                <a href="{{ route('find.design.requirement') }}" class="btn p-3 w-100" style="background: #fff; color: #0080E6; font-size: 14px; font-weight: 500; font-style: normal; text-transform: capitalize;">Find Needs</a>
             </div>
         </div>
     </div>

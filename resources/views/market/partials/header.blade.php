@@ -1,3 +1,30 @@
+<style>
+    .header-search-wrapper input:focus {
+        border: 0.1rem solid #FFFFFF !important;
+    }
+    .header-search-wrapper input:active {
+        border: 0.1rem solid #FFFFFF !important;
+    }
+
+    ion-icon:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.tooltip-inner{
+    padding: 0.2rem 0.8rem;
+    background: #ccc;
+    color: #FFF;
+    border: 0;
+}
+
+.desktop-scroll-search .form-control {
+    border-top-left-radius: 4rem !important;
+    border-bottom-left-radius: 4rem !important;
+}
+</style>
 <header class="header" style="background-color: #0080E6">
     <div class="hide-from-mobile" style="background-color: #0080E6">
         <div class="container">
@@ -60,7 +87,7 @@
                     <div class="social-icons">
                         <a href="#" class="social-icon social-facebook icon-facebook" target="_blank"></a>
                         <a href="#" class="social-icon social-twitter icon-twitter" target="_blank"></a>
-                        <a href="#" class="social-icon social-instagram icon-instagram" target="_blank"></a>
+                        {{-- <a href="#" class="social-icon social-instagram icon-instagram" target="_blank"></a> --}}
                     </div>
                     <!-- End .social-icons -->
                 </div>
@@ -114,21 +141,21 @@
 
                     <div class="header-contact d-none d-lg-flex pl-0 ml-3 mr-xl-4">
                     <div class="header-icon mb-0">
-                        <a href="#">
-                            <ion-icon name="duplicate-outline" style="font-size: 22px"></ion-icon>
+                        <a href="{{ route('product.dashboard') }}">
+                            <ion-icon name="add-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Post products"></ion-icon>
                         </a>
                     </div>
                     
                     <div class="header-icon mb-0">
                         <a href="#">
-                            <ion-icon name="notifications-outline" style="font-size: 22px"></ion-icon>
+                            <ion-icon name="notifications-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="See Notifications"></ion-icon>
                         </a>
                     </div>
                     </div>
                     
                     @if (Auth::guest())
                     <a href="{{ route('login') }}" class="header-icon d-inline-block" title="Login">
-                        <ion-icon name="log-in-outline" style="font-size: 22px">></ion-icon>
+                        <ion-icon name="log-in" style="font-size: 22px">></ion-icon>
                     </a>
                     @else
                     <div class="dropdown profile-dropdown">
@@ -143,12 +170,15 @@
                                 <span>{{ Auth::user()->email }}</span>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('seller.dashboard', Auth::user()->id) }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('seller.dashboard') }}">Dashboard</a>
                             <a class="dropdown-item" href="#"><ion-icon name="chatbubbles-outline"></ion-icon> Help center</a>
                             <a class="dropdown-item" href="#"><ion-icon name="cloud-download-outline"></ion-icon> Get the App</a>
                             <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
+                            <form class="mb-0" method="POST" action="{{ route('logout') }}">
+                                @csrf
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
+                            this.closest('form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
+                            </form>
                         </div>
                         
                     </div>
@@ -167,7 +197,7 @@
         <div class="header-bottom hide-from-dashboard sticky-header d-lg-block d-none" data-sticky-options="{'mobile': false}">
             <div class="container">
                 <div class="header-left">
-                    <a href="#" class="logo">
+                    <a href="/" class="logo">
                         {{-- <img src="{{ asset('general/imgs/BUILDBETA_LOGO_4_PNG.png') }}" alt="buildbeta Logo"> --}}
                         <img height="30px" width="30px" src="{{ asset('general/imgs/icons/logo.svg') }}" alt="">
                     </a>
@@ -176,9 +206,9 @@
                     <nav class="main-nav w-100">
                         <ul class="menu">
                             <li class="active">
-                                <a href="#">Home</a>
+                                <a href="/">Home</a>
                             </li>
-                            <li><a href="#">Products</a></li>
+                            <li><a href="{{ route('browse') }}">Products</a></li>
                             <li>
                                 <a href="demo2-shop.html">Categories</a>
                                 <div class="megamenu megamenu-fixed-width megamenu-3cols">
@@ -293,9 +323,9 @@
                             </li> --}}
 
                             {{-- Right links --}}
-                            <li class="float-right"><a href="#" class="pl-1" target="_blank">Find Need</a></li>
-                            <li class="float-right"><a href="#" class="pl-1">Post Need</a></li>
-                            <li class="float-right"><a href="#" class="pl-1" target="_blank">Post Jobs</a></li>
+                            <li class="float-right"><a href="{{ route('find.design.requirement') }}" class="pl-1">Find Need</a></li>
+                            <li class="float-right"><a href="{{ route('post.product.requirement') }}" class="pl-1">Post Need</a></li>
+                            <li class="float-right"><a href="{{ route('job.create') }}" class="pl-1">Post Jobs</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -304,10 +334,10 @@
                 <div class="header-right px-0">
                     <div class="header-search header-icon header-search-inline header-search-category w-lg-max">
                         <a href="#" class="search-toggle" role="button">
-                            <ion-icon name="search-outline" style="font-size: 22px"></ion-icon>
+                            <ion-icon name="search-circle" style="font-size: 25px"></ion-icon>
                         </a>
                         
-                        <form action="#" method="get">
+                        <form class="desktop-scroll-search" action="#" method="get">
                             <div class="header-search-wrapper">
                                 <input type="search" class="form-control scroll-search" name="q" id="qqq" placeholder="Search..." required>
                                 <div class="select-custom">
@@ -326,21 +356,21 @@
 
                     <div class="header-contact d-none d-lg-flex pl-0 ml-3 mr-xl-4">
                         <div class="header-icon mb-0">
-                            <a href="#">
-                                <ion-icon name="duplicate-outline" style="font-size: 22px"></ion-icon>
+                            <a href="{{ route('product.dashboard') }}">
+                                <ion-icon name="add-circle" style="font-size: 25px"></ion-icon>
                             </a>
                         </div>
                         
                         <div class="header-icon mb-0">
                             <a href="#">
-                                <ion-icon name="notifications-outline" style="font-size: 22px"></ion-icon>
+                                <ion-icon name="notifications-circle" style="font-size: 25px"></ion-icon>
                             </a>
                         </div>
                     </div>
 
                     @if (Auth::guest())
                     <a href="{{ route('login') }}" class="header-icon" title="Login">
-                        <ion-icon name="log-in-outline" style="font-size: 22px">></ion-icon>
+                        <ion-icon name="log-in" style="font-size: 22px">></ion-icon>
                     </a>
                     @else
                     <div class="dropdown profile-dropdown">
@@ -355,13 +385,15 @@
                                 <span>{{ Auth::user()->email }}</span>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('buyer.dashboard') }}">Dashboard</a>
                             <a class="dropdown-item" href="#"><ion-icon name="chatbubbles-outline"></ion-icon> Help center</a>
                             <a class="dropdown-item" href="#"><ion-icon name="cloud-download-outline"></ion-icon> Get the App</a>
                             <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
+                            <form class="mb-0" method="POST" action="{{ route('logout') }}">
+                                @csrf
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
-                        </div>
+                            this.closest('form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
+                            </form>                        </div>
                         
                     </div>
                     @endif
