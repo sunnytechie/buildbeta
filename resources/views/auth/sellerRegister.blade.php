@@ -25,15 +25,19 @@
 
             <div class="col-md-8">
                 <div class="d-flex justify-content-between">
-                    <div class="pt-5 pb-1">
-                        <a href="{{ route('welcome') }}" class="border border-primary text-primary">
+                    {{-- Arrow Back to welcome --}}
+                    <div class="pt-5 px-5 pb-1">
+                        <a href="{{ route('welcome') }}" class="text-primary">
                             <i class="fe fe-arrow-left" style="font-size: 20px"></i>
                         </a>
                     </div>
-                    <div class="pt-5 pb-1">
-                        <p class="text-center" style="font-size: 12px">Already have an account? <a href="{{ route('login') }}" class="border border-primary text-primary">Log in</a></p>
+
+                    <div class="pt-5 px-5 pb-1 hide-from-mobile">
+                        <p class="text-center" style="font-size: 12px">Already have an account? <a href="{{ route('login') }}" class="text-primary" style="margin-left: 12px">Log in</a></p>
                     </div>
                 </div>
+
+
                 <div class="col-md-6 offset-md-3">
                     <div class="py-2">
                         <form method="POST" action="{{ route('register') }}">
@@ -41,7 +45,7 @@
                             {{-- hidden user_type --}}
                             <input type="hidden" name="user_type" value="seller">
                             {{-- header --}}
-                            <div class="justify-content-start mb-5">
+                            <div class="justify-content-start mt-5 mb-5">
                                 <h4 style="color: #0080E6"><span style="font-weight: 700; line-height: 100%; font-style: normal; font-size: 25px;">Welcome to Build</span><span>Beta</span></h4>
                                 <p style="font-size: 12px">Thank you for being here.</p>
                             </div>
@@ -223,6 +227,13 @@
                                                         
                             <button type="submit" class="btn bb-bg-btn btn-primary w-100">Submit</button>
                         </form>
+
+                        <div class="mt-5 text-center show-only-mobile">
+                            <div class="p-5">
+                                <p class="text-center">Already have an account? <a href="{{ route('login') }}" class="text-primary" style="margin-left: 10px">Log In</a></p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

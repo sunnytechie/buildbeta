@@ -95,8 +95,8 @@
                         <div class="d-flex">
                             <div class="mr-2"><img class="img-fluid" height="70" width="70" src="{{ asset('general/imgs/user.png') }}" alt=""></div>
                             <div class="mt-1">
-                                <h3 class="account-sub-title mb-1 d-none d-md-block" style="font-size: 16px">Obioma JC</h3>
-                                <span>Buyer</span>
+                                <h3 class="account-sub-title mb-0" style="font-size: 16px; font-style: normal; font-weight: 700; font-family: 'Poppins'; font-size: 16px; line-height: 160%; color: #000000;">Obioma JC</h3>
+                                <span style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Buyer</span>
                             </div>
                         </div>
                         

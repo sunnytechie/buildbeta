@@ -63,8 +63,21 @@
             border: 0.1rem solid #0080E6 !important;
             border-radius: 0 !important;
         }
+
+        .select-sign-up-bg-active {
+            background: #0080E6;
+            border: 0.1rem solid #0080E6 !important;
+            border-radius: 0 !important;
+            color: #fff !important;
+        }
+
         .select-sign-up-bg:hover {
             background: #0080E6;
+            cursor: pointer;
+        }
+
+        .select-sign-up-bg:active {
+            background: #0080E6 !important;
         }
 
         .select-sign-up-bg:hover .card-title {
@@ -166,6 +179,15 @@
             $(this).addClass('submitted');
         }
     });
+    </script>
+
+    <script>
+        $(document).ready(function changeBgFunction() {
+            $('.select-sign-up-bg').click(function () {
+                $('.select-sign-up-bg').removeClass('select-sign-up-bg-active');
+                $(this).addClass('select-sign-up-bg-active');
+            });
+        });
     </script>
     </body>
 </html>

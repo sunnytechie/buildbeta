@@ -19,7 +19,16 @@ class DashboardController extends Controller
 
     public function seller()
     {
-        return view('seller.dashboard');
+        $categories = Category::all();
+        $sub_categories = Subcategory::all();
+        return view('seller.dashboard', compact('categories', 'sub_categories'));
+    }
+
+    public function product()
+    {
+        $categories = Category::all();
+        $sub_categories = Subcategory::all();
+        return view('seller.product.products', compact('categories', 'sub_categories'));
     }
 
     public function buyer()

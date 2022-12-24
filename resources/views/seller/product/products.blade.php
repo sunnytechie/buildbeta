@@ -14,8 +14,8 @@
         }
 
         /* .footer-ribbon {
-                    display: none !important;
-                } */
+                display: none !important;
+            } */
 
         .header-middle {
             border-top: 0 !important;
@@ -30,8 +30,8 @@
         }
 
         /* .dataTables_length {
-                    margin-top: 12px !important;
-                } */
+                margin-top: 12px !important;
+            } */
 
         /* First child row in basic-datatable_wrapper */
         .dataTables_wrapper .row:first-child {
@@ -62,13 +62,13 @@
                 <h2 class="text-uppercase">My Account</h2>
                 <ul class="nav nav-tabs list flex-column mb-0" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab"
-                            aria-controls="dashboard" aria-selected="true">Dashboard</a>
+                        <a class="nav-link" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab"
+                            aria-controls="dashboard" aria-selected="false">Dashboard</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" id="product-tab" data-toggle="tab" href="#product" role="tab"
-                            aria-controls="product" aria-selected="false">Products</a>
+                        <a class="nav-link active" id="product-tab" data-toggle="tab" href="#product" role="tab"
+                            aria-controls="product" aria-selected="true">Products</a>
                     </li>
 
                     <li class="nav-item">
@@ -95,9 +95,7 @@
 
 
             <div class="col-lg-9 order-lg-last order-1 tab-content">
-                <div class="tab-pane fade  
-                @if (request()->routeIs('seller.dashboard')) show active @endif"
-                    id="dashboard" role="tabpanel">
+                <div class="tab-pane fade" id="dashboard" role="tabpanel">
                     <div class="dashboard-content">
                         <div class="d-flex my-5 justify-content-between">
                             <h3 class="account-sub-title d-md-block" style="font-size: 20px">Dashboard</h3>

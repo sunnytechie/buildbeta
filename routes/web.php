@@ -44,6 +44,7 @@ Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.
 
 //Seller Dashboard
 Route::get('/service-provider-dashboard', [DashboardController::class, 'seller'])->name('seller.dashboard')->middleware('auth', 'is_seller', 'verified');
+Route::get('/service-provider-products', [DashboardController::class, 'product'])->name('product.dashboard')->middleware('auth', 'is_seller', 'verified');
 //Buyer Dashboard
 Route::get('/buyer-dashboard', [DashboardController::class, 'buyer'])->name('buyer.dashboard')->middleware('auth', 'verified');
 //Bbforce Dashboard

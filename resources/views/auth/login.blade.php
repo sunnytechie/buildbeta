@@ -24,9 +24,9 @@
             </div>
 
             <div class="col-md-8">
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end hide-from-mobile">
                     <div class="p-5">
-                        <p class="text-center">Don't have an account? <a href="{{ route('welcome') }}" class="border border-primary text-primary">Sign up</a></p>
+                        <p class="text-center">Don't have an account? <a href="{{ route('welcome') }}" class="text-primary" style="margin-left: 12px">Sign up</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 offset-md-3">
@@ -89,6 +89,12 @@
                             </div>
                             <button type="submit" class="btn btn-primary bb-bg-btn w-100">Submit</button>
                         </form>
+
+                        <div class="mt-5 text-center show-only-mobile">
+                            <div class="p-5">
+                                <p class="text-center">Don't have an account? <a href="{{ route('welcome') }}" class="text-primary" style="margin-left: 10px">Sign up</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

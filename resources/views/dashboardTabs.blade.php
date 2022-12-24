@@ -1,8 +1,10 @@
-<div class="tab-pane fade" id="product" role="tabpanel">
+<div class="tab-pane fade
+@if (request()->routeIs('product.dashboard')) show active @endif" id="product" role="tabpanel">
     <div class="product-content">
-        Product
+        @include('seller.product.index')
     </div>
-</div><!-- End .tab-pane -->
+</div>
+<!-- End .tab-pane -->
 
 <div class="tab-pane fade" id="address" role="tabpanel">
     <div class="address-content">
