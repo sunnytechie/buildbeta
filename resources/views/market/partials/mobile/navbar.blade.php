@@ -56,8 +56,8 @@
     <div class="header-middle p-0 pb-4">
         <div class="container">
             <div class="header-left mobile search-filter" style="width: 100%">
-                <form class="search mb-0" style="width: 100%">
-                        <input type="text"placeholder="Search..." required style="padding: 10px; background: transparent; font-size: 14px; color: #fff; border: 0.2rem solid #fff; width: 100%;">
+                <form method="GET" action="{{ route('search') }}" class="search mb-0" style="width: 100%">
+                        <input type="search" id="query" name="query" placeholder="Search..." required style="padding: 10px; background: transparent; font-size: 14px; color: #fff; border: 0.2rem solid #fff; width: 100%;" value="{{  request('query') }}">
                 </form>
             </div>
 

@@ -122,13 +122,15 @@
                     <div class="header-icon mb-0 header-search first-header header-search-inline header-search-category w-lg-max pl-3 pr-1">
                         <a href="#" class="search-toggle" role="button" title="Search"><i
                                 class="icon-search-3"></i></a>
-                        <form action="#" method="get" style="width: 600px">
+                        <form action="{{ route('search') }}" method="get" style="width: 600px">
                             <div class="header-search-wrapper">
-                                <input type="search" class="form-control first-input" name="q" id="qq" placeholder="Search..." required style="background: transparent; border: 0.2rem solid #FFFFFF; color: #FFF; border-radius: 0;">
+                                <input type="search" class="form-control first-input" name="query" id="query" placeholder="Search..." required style="background: transparent; border: 0.2rem solid #FFFFFF; color: #FFF; border-radius: 0;" value="{{  request('query') }}">
                                 <div class="select-custom">
-                                    <select id="category" name="cat">
-                                        <option>All Categories</option>
-                                        <option>Constructions</option>
+                                    <select id="category" name="category">
+                                        <option value="">All Categories</option>
+                                        @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <!-- End .select-custom -->
@@ -337,13 +339,15 @@
                             <ion-icon name="search-circle" style="font-size: 25px"></ion-icon>
                         </a>
                         
-                        <form class="desktop-scroll-search" action="#" method="get">
+                        <form class="desktop-scroll-search" action="{{ route('search') }}" method="get">
                             <div class="header-search-wrapper">
-                                <input type="search" class="form-control scroll-search" name="q" id="qqq" placeholder="Search..." required>
+                                <input type="search" class="form-control scroll-search" name="query" id="query" placeholder="Search..."  value="{{  request('query') }}" required>
                                 <div class="select-custom">
-                                    <select id="cat" name="cat">
-                                        <option>All Categories</option>
-                                        <option>Fashion</option>
+                                    <select id="category" name="category">
+                                        <option value="">All Categories</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <!-- End .select-custom -->
