@@ -155,7 +155,7 @@
                     
                     @if (Auth::guest())
                     <a href="{{ route('login') }}" class="header-icon d-inline-block" title="Login">
-                        <ion-icon name="log-in" style="font-size: 22px">></ion-icon>
+                        <ion-icon name="person-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Login or Register"></ion-icon>
                     </a>
                     @else
                     <div class="dropdown profile-dropdown">
@@ -357,20 +357,20 @@
                     <div class="header-contact d-none d-lg-flex pl-0 ml-3 mr-xl-4">
                         <div class="header-icon mb-0">
                             <a href="{{ route('product.dashboard') }}">
-                                <ion-icon name="add-circle" style="font-size: 25px"></ion-icon>
+                                <ion-icon name="add-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Post products"></ion-icon>
                             </a>
                         </div>
                         
                         <div class="header-icon mb-0">
                             <a href="#">
-                                <ion-icon name="notifications-circle" style="font-size: 25px"></ion-icon>
+                                <ion-icon name="notifications-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="See Notifications"></ion-icon>
                             </a>
                         </div>
                     </div>
 
                     @if (Auth::guest())
                     <a href="{{ route('login') }}" class="header-icon" title="Login">
-                        <ion-icon name="log-in" style="font-size: 22px">></ion-icon>
+                        <ion-icon name="person-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Login or Register"></ion-icon>
                     </a>
                     @else
                     <div class="dropdown profile-dropdown">
