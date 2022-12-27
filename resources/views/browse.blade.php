@@ -2,7 +2,7 @@
     @section('content')
     <div class="my-5 mt-1">
         <div class="row">
-            <div class="col-md-2 col-4 hide-from-mobile">
+            <div class="col-md-2 hide-from-mobile">
                 {{-- <a href="{{ route('market') }}" class="btn btn-dark btn-block btn-lg px-0 ls-10">Back</a> --}}
                 {{-- list of product category --}}
                 <div class="side-menu-wrapper border-0">    
@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="col-md-10 col-8">
+            <div class="col-md-10">
                 <div class="d-flex justify-content-between mt-1 mb-1">
                     <div class="title text-black" style="font-family: 'Poppins'; font-style: normal; font-weight: 600; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Interior Designs</div>
                     <div class="link" style="color: #0080E6"><a href="#" style="font-family: 'Poppins'; font-style: normal; font-weight: 600; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #0080E6;">See More</a></div>
