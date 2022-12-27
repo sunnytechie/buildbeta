@@ -20,10 +20,10 @@ class ProductsSeeder extends Seeder
         // \App\Models\Product::factory(100)->create();
 
         $faker = Faker::create();
-        foreach(range(1, 2) as $index) {
+        foreach(range(1, 20) as $index) {
             DB::table('products')->insert([
                 'user_id' => 1,
-                'title' => 'Sunny Building',
+                'title' => $faker->sentence(3),
                 'description' => $faker->text,
                 'price' => $faker->randomFloat(2, 1, 1000),
                 'image' => $faker->imageUrl(640, 480, 'building', true, 'Faker', true),
