@@ -19,7 +19,7 @@
                         <div class="product-label label-sale">-20%</div>
                     </div> --}}
                 </figure>
-                <button class="btn p-1" style="position: absolute; margin-top: -45px; margin-left: 8px; background: #0080E6; color: #fff; line-height: 16px; font-size: 10px; text-transform: capitalize; font-weight: 600">{{ $product->category->title }}</button>
+                <button class="btn p-1" style="position: absolute; margin-top: -30px; margin-left: 8px; background: #0080E6; color: #fff; line-height: 16px; font-size: 10px; text-transform: capitalize; font-weight: 600">{{ $product->category->title }}</button>
 
                 <div class="category-tag">
                     <a href="#" class="p-2 btn" style="text-transform:inherit; font-family: 'Poppins'; color: #ccc; font-size: 12px; line-height: 16px; font-weight: 400;">BuildBeta</a>
