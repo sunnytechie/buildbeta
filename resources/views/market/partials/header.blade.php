@@ -21,9 +21,23 @@
 }
 
 .desktop-scroll-search .form-control {
-    border-top-left-radius: 4rem !important;
-    border-bottom-left-radius: 4rem !important;
+    border-top-left-radius: 0rem !important;
+    border-bottom-left-radius: 0rem !important;
 }
+
+.header-search-category .btn {
+    border-top-right-radius: 0rem !important;
+    border-bottom-right-radius: 0rem !important;
+}
+
+/* media query on tablet view */
+@media (max-width: 991px) {
+    .header-search-inline .form-control {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+}
+
 </style>
 <header class="header" style="background-color: #0080E6">
     <div class="hide-from-mobile" style="background-color: #0080E6">
@@ -119,7 +133,7 @@
                     </div>
                         <!-- End .header-icon -->
 
-                    <div class="header-icon mb-0 header-search first-header header-search-inline header-search-category w-lg-max pl-3 pr-1">
+                    <div class="header-icon mb-0 header-search first-header header-search-inline header-search-category w-lg-max pl-3 pr-1" style="text-align: right">
                         <a href="#" class="search-toggle" role="button" title="Search"><i
                                 class="icon-search-3"></i></a>
                         <form action="{{ route('search') }}" method="get" style="width: 600px">
@@ -211,119 +225,11 @@
                                 <a href="/">Home</a>
                             </li>
                             <li><a href="{{ route('browse') }}">Products</a></li>
-                            <li>
-                                <a href="demo2-shop.html">Categories</a>
-                                <div class="megamenu megamenu-fixed-width megamenu-3cols">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <a href="#" class="nolink">VARIATION 1</a>
-                                            <ul class="submenu">
-                                                <li><a href="#">Sub category 1</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="#" class="nolink">VARIATION 2</a>
-                                            <ul class="submenu">
-                                                <li><a href="#">Sub category 1</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="#" class="nolink">VARIATION 3</a>
-                                            <ul class="submenu">
-                                                <li><a href="#">Sub category 1</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                                <li><a href="#">Sub category xx</a></li>
-                                            </ul>
-                                        </div>
-                                        {{-- <div class="col-lg-4 p-0">
-                                            <div class="menu-banner">
-                                                <figure>
-                                                    <img src="assets/images/menu-banner.jpg" alt="Menu banner" width="300" height="300">
-                                                </figure>
-                                                <div class="banner-content">
-                                                    <h4>
-                                                        <span class="">UP TO</span><br />
-                                                        <b class="">50%</b>
-                                                        <i>OFF</i>
-                                                    </h4>
-                                                    <a href="demo2-shop.html" class="btn btn-sm btn-dark">SHOP
-                                                        NOW</a>
-                                                </div>
-                                            </div>
-                                        </div> --}}
-                                    </div>
-                                </div>
-                                <!-- End .megamenu -->
-                            </li>
                             <li><a href="#">Designs</a></li>
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Properties</a></li>
 
-                            {{-- <li>
-                                <a href="#">Pages</a>
-                                <ul>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="dashboard.html">Dashboard</a></li>
-                                    <li><a href="demo2-about.html">About Us</a></li>
-                                    <li><a href="#">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="single.html">Blog Post</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="demo2-contact.html">Contact Us</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="forgot-password.html">Forgot Password</a></li>
-                                </ul>
-                            </li> --}}
-
-
-                            {{-- <li>
-                                <a href="#">Elements</a>
-                                <ul class="custom-scrollbar">
-                                    <li><a href="element-accordions.html">Accordion</a></li>
-                                    <li><a href="element-alerts.html">Alerts</a></li>
-                                    <li><a href="element-animations.html">Animations</a></li>
-                                    <li><a href="element-banners.html">Banners</a></li>
-                                    <li><a href="element-buttons.html">Buttons</a></li>
-                                    <li><a href="element-call-to-action.html">Call to Action</a></li>
-                                    <li><a href="element-countdown.html">Count Down</a></li>
-                                    <li><a href="element-counters.html">Counters</a></li>
-                                    <li><a href="element-headings.html">Headings</a></li>
-                                    <li><a href="element-icons.html">Icons</a></li>
-                                    <li><a href="element-info-box.html">Info box</a></li>
-                                    <li><a href="element-posts.html">Posts</a></li>
-                                    <li><a href="element-products.html">Products</a></li>
-                                    <li><a href="element-product-categories.html">Product Categories</a></li>
-                                    <li><a href="element-tabs.html">Tabs</a></li>
-                                    <li><a href="element-testimonial.html">Testimonials</a></li>
-                                </ul>
-                            </li> --}}
-
+                           
                             {{-- Right links --}}
                             <li class="float-right"><a href="{{ route('find.design.requirement') }}" class="pl-1">Find Need</a></li>
                             <li class="float-right"><a href="{{ route('post.product.requirement') }}" class="pl-1">Post Need</a></li>
@@ -341,7 +247,7 @@
                         
                         <form class="desktop-scroll-search" action="{{ route('search') }}" method="get">
                             <div class="header-search-wrapper">
-                                <input type="search" class="form-control scroll-search" name="query" id="query" placeholder="Search..."  value="{{  request('query') }}" required>
+                                <input type="search" class="scroll-search form-control rounded-0" name="query" id="query" placeholder="Search..."  value="{{  request('query') }}" required style="border-radius: 0">
                                 <div class="select-custom">
                                     <select id="category" name="category">
                                         <option value="">All Categories</option>

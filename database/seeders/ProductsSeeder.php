@@ -33,11 +33,11 @@ class ProductsSeeder extends Seeder
                 'thumbnail3' => 'https://via.placeholder.com/150',
                 'thumbnail4' => 'https://via.placeholder.com/150',
                 'thumbnail5' => 'https://via.placeholder.com/150',
-                'category_id' => 1,
+                'category_id' => $faker->numberBetween(1, 5),
                 'category_title' => $faker->word,
-                'subcategory_id' => 1,
+                'subcategory_id' => $faker->numberBetween(1, 5),
                 'subcategory_title' => $faker->word,
-                'provider_id' => 1,
+                'provider_id' => $faker->numberBetween(1, 3),
                 'publish' => 1,
             ]);
         }

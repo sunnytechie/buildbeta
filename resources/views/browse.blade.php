@@ -8,12 +8,8 @@
                 <div class="side-menu-wrapper border-0">    
                     <div class="side-menu-body">
                         <ul class="side-menu pb-1 active-border">
-                            <li class="active border-start border-primary"><a class="border-0" href="#">Designs</a></li>
-                            <li><a class="border-0" href="#">Interiors</a></li>
-                            <li><a class="border-primary" href="#">Buildings</a></li>
-                            <li><a class="border-0" href="#">Building Artisans</a></li>
-                            <li><a class="border-0" href="#">Bilding Services</a></li>
-                            <li><a class="border-0" href="#">Building Materials</a></li>
+                            <li class="active"><a class="border-0 border-start border-primary" href="#" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 120%; letter-spacing: -0.3px;color: #0080E6;">Designs</a></li>
+                            <li><a class="border-0" href="#" style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 120%;letter-spacing: -0.3px; color: #000000;">Interiors</a></li>
                         </ul>
 
                     </div>
@@ -23,26 +19,22 @@
 
             <div class="col-md-9 col-8">
                 <div class="d-flex justify-content-between mb-1">
-                    <div class="title text-black">Interior Designs</div>
-                    <div class="link" style="color: #0080E6"><a href="#">See More</a></div>
+                    <div class="title text-black" style="font-family: 'Poppins'; font-style: normal; font-weight: 600; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Interior Designs</div>
+                    <div class="link" style="color: #0080E6"><a href="#" style="font-family: 'Poppins'; font-style: normal; font-weight: 600; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #0080E6;">See More</a></div>
                 </div>
                 <div class="row">
+                    @foreach ($products as $product)
                     <div class="col-md-4 col-6">
-                        <div class="card border-0">
-                            <img src="{{ asset('general/imgs/products/1.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body px-0 py-2 border-0" style="min-height: auto">
-                                <h5 class="card-title">Product title</h5>
+                        <a href="#">
+                            <div class="card border-0">
+                                <img src="{{ $product->image }}" class="card-img-top" alt="...">
+                                <div class="card-body px-0 py-2 border-0" style="min-height: auto">
+                                    <h5 class="card-title" style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Product title</h5>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-md-4 col-6">
-                        <div class="card border-0">
-                            <img src="{{ asset('general/imgs/products/1.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body px-0 py-2 border-0" style="min-height: auto">
-                                <h5 class="card-title">Product title</h5>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 

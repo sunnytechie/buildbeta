@@ -125,3 +125,12 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   border-color: #0080E6 !important;
   border-width: 0.1rem !important;
 }
+
+.header-search-wrapper {
+  border-radius: 0rem !important;
+}
+
+.desktop-scroll-search .form-control {
+  border-top-left-radius: 0rem !important;
+  border-bottom-left-radius: 0rem !important;
+}

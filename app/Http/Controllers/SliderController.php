@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
-class VacancyController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index() {
-        $categories = Category::all();
-        $sub_categories = Subcategory::all();
-        return view('vacancy.job', compact('categories', 'sub_categories'));
+    public function index()
+    {
+        //
     }
 
     /**
@@ -27,9 +23,7 @@ class VacancyController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $sub_categories = Subcategory::all();
-        return view('vacancy.create', compact('categories', 'sub_categories'));
+        //
     }
 
     /**
@@ -51,9 +45,7 @@ class VacancyController extends Controller
      */
     public function show($id)
     {
-        $categories = Category::all();
-        $sub_categories = Subcategory::all();
-        return view('vacancy.show', compact('categories', 'sub_categories'));
+        //
     }
 
     /**
@@ -64,8 +56,7 @@ class VacancyController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::all();
-        $sub_categories = Subcategory::all();
+        //
     }
 
     /**

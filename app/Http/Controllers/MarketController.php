@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Personalize;
@@ -12,6 +13,15 @@ class MarketController extends Controller
 {
     public function index()
     {
+        //products
+        $products = Product::orderBy('id', 'desc')->where('publish', 1)->paginate(30);
+        //sliders
+        $sliders = Slider::orderBy('id', 'desc')->where('publish', 1)->get();
+        //get products with first provider id
+        $productWithId1 = Product::orderBy('id', 'desc')->where('provider_id', 1)->where('publish', 1)->paginate(30);
+        $productWithId2 = Product::orderBy('id', 'desc')->where('provider_id', 2)->where('publish', 1)->paginate(30);
+        $productWithId3 = Product::orderBy('id', 'desc')->where('provider_id', 3)->where('publish', 1)->paginate(30);
+
         //categories and subcategories
         $categories = Category::all();
         $sub_categories = Subcategory::all();
@@ -27,14 +37,14 @@ class MarketController extends Controller
                 $personalize = Personalize::where('user_id', $currentUser)->first();
                 if ($personalize) {
                     //Write query here.
-                    return view('buildbeta', compact('categories', 'sub_categories'));
+                    return view('buildbeta', compact('categories', 'sub_categories', 'products', 'productWithId1', 'productWithId2', 'productWithId3', 'sliders'));
                 } else {
                     return view('auth.personalize');
                 }
             }
        
         } else {
-            return view('buildbeta', compact('categories', 'sub_categories'));
+            return view('buildbeta', compact('categories', 'sub_categories', 'products', 'productWithId1', 'productWithId2', 'productWithId3', 'sliders'));
         }
     }
 
@@ -54,9 +64,9 @@ class MarketController extends Controller
         $category = $request->input('category');
 
         if ($category) {
-            $products = Product::search($query)->where('category_id', $category)->paginate(30);
+            $products = Product::search($query)->where('category_id', $category)->where('publish', 1)->paginate(30);
         } else {
-            $products = Product::search($query)->paginate(30);
+            $products = Product::search($query)->where('publish', 1)->paginate(30);
         }
 
         return view('search', compact('products', 'categories', 'sub_categories'));
@@ -64,6 +74,9 @@ class MarketController extends Controller
 
     public function browse()
     {
-        return view('browse');
+        $products = Product::orderBy('id', 'desc')->where('publish', 1)->paginate(30);
+        $categories = Category::all();
+        $sub_categories = Subcategory::all();
+        return view('browse', compact('categories', 'sub_categories', 'products'));
     }
 }

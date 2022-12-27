@@ -16,7 +16,7 @@
                         <input type="text" name="title" id="title" class="form-control" placeholder="Job Title" style="font-size: 14px">
                     </div>
                     <div class="form-group">
-                            <textarea class="form-control border border-primary" placeholder="Job description..." name="description" id="description" cols="10" rows="3" style="font-size: 14px"></textarea>
+                            <textarea class="form-control border" placeholder="Job description..." name="description" id="description" cols="10" rows="3" style="font-size: 14px"></textarea>
                     </div>
                     <div class="form-group">
                         {{-- select job type --}}
@@ -42,11 +42,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control border border-primary" name="responsibilities" id="responsibilities" cols="10" rows="3" placeholder="Responsibilities" style="font-size: 14px;"></textarea>
+                        <textarea class="form-control border" name="responsibilities" id="responsibilities" cols="10" rows="3" placeholder="Responsibilities" style="font-size: 14px;"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <textarea class="form-control border border-primary" placeholder="Requirements" name="requirements" id="requirements" cols="10" rows="3" style="font-size: 14px"></textarea>
+                        <textarea class="form-control border" placeholder="Requirements" name="requirements" id="requirements" cols="10" rows="3" style="font-size: 14px"></textarea>
                     </div>
                    
 
