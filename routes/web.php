@@ -42,15 +42,21 @@ Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit')
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth', 'verified');
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy')->middleware('auth', 'verified');
 
+//testing page
+Route::get('/testing', [DashboardController::class, 'testing'])->name('testing')->middleware('auth', 'is_admin', 'verified');
 //Seller Dashboard
-Route::get('/service-provider-dashboard', [DashboardController::class, 'seller'])->name('seller.dashboard')->middleware('auth', 'is_seller', 'verified');
-Route::get('/service-provider-products', [DashboardController::class, 'product'])->name('product.dashboard')->middleware('auth', 'is_seller', 'verified');
+Route::get('/service-provider-dashboard', [UserController::class, 'seller'])->name('seller.dashboard')->middleware('auth', 'is_seller', 'verified');
+Route::get('/service-provider-products', [UserController::class, 'product'])->name('product.dashboard')->middleware('auth', 'is_seller', 'verified');
+//Seller Settings page
+Route::get('/service-provider-settings', [UserController::class, 'sellerSettings'])->name('seller.settings')->middleware('auth', 'is_seller', 'verified');
 //Buyer Dashboard
-Route::get('/buyer-dashboard', [DashboardController::class, 'buyer'])->name('buyer.dashboard')->middleware('auth', 'verified');
+Route::get('/buyer-dashboard', [UserController::class, 'buyer'])->name('buyer.dashboard')->middleware('auth', 'verified');
+//Buyer Settings page
+Route::get('/buyer-settings', [UserController::class, 'buyerSettings'])->name('buyer.settings')->middleware('auth', 'verified');
 //Bbforce Dashboard
 Route::get('/bbforce-dashboard', [DashboardController::class, 'bbforce'])->name('bbforce.dashboard')->middleware('auth', 'is_bbforce', 'verified');
 //reward store
-Route::get('/reward-store', [DashboardController::class, 'reward'])->name('reward.store')->middleware('auth', 'verified');
+Route::get('/reward-store', [UserController::class, 'reward'])->name('reward.store')->middleware('auth', 'verified');
 
 //Admin Dashboard
 Route::middleware('auth', 'is_admin', 'verified')->group(function () {

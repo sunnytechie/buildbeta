@@ -68,11 +68,6 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab"
-                        aria-controls="address" aria-selected="false">Addresses</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab"
                         aria-controls="setting" aria-selected="true">Settings</a>
                 </li>

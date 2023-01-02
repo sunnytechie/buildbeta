@@ -134,3 +134,8 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   border-top-left-radius: 0rem !important;
   border-bottom-left-radius: 0rem !important;
 }
+
+.verified-tag {
+  user-select: none !important;
+  cursor: default !important;
+}

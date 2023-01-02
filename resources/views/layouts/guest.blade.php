@@ -71,6 +71,10 @@
             color: #fff !important;
         }
 
+        input {
+            padding: 10px !important;
+        }
+
         .select-sign-up-bg:hover {
             background: #0080E6;
             cursor: pointer;

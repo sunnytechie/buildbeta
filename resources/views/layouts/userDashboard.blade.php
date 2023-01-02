@@ -38,7 +38,7 @@
     <script>
         WebFontConfig = {
             google: {
-                families: ['Open+Sans:300,400,600,700,800', 'Poppins:300,400,500,600,700', 'Shadows+Into+Light:400',
+                families: ['Poppins:300,400,500,600,700', 'Open+Sans:300,400,600,700,800', 'Shadows+Into+Light:400',
                     'Segoe+Script:300,400,500,600'
                 ]
             }

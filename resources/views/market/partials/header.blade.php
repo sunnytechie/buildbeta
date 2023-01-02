@@ -186,7 +186,11 @@
                                 <span>{{ Auth::user()->email }}</span>
                             </div>
                             <div class="dropdown-divider"></div>
+                            @if (Auth::user()->is_seller == 1)
                             <a class="dropdown-item" href="{{ route('seller.dashboard') }}">Dashboard</a>
+                                @else
+                            <a class="dropdown-item" href="{{ route('buyer.dashboard') }}">Dashboard</a>
+                            @endif
                             <a class="dropdown-item" href="#"><ion-icon name="chatbubbles-outline"></ion-icon> Help center</a>
                             <a class="dropdown-item" href="#"><ion-icon name="cloud-download-outline"></ion-icon> Get the App</a>
                             <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
@@ -295,7 +299,11 @@
                                 <span>{{ Auth::user()->email }}</span>
                             </div>
                             <div class="dropdown-divider"></div>
+                            @if (Auth::user()->is_seller == 1)
+                            <a class="dropdown-item" href="{{ route('seller.dashboard') }}">Dashboard</a>
+                                @else
                             <a class="dropdown-item" href="{{ route('buyer.dashboard') }}">Dashboard</a>
+                            @endif
                             <a class="dropdown-item" href="#"><ion-icon name="chatbubbles-outline"></ion-icon> Help center</a>
                             <a class="dropdown-item" href="#"><ion-icon name="cloud-download-outline"></ion-icon> Get the App</a>
                             <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
@@ -303,7 +311,8 @@
                                 @csrf
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             this.closest('form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
-                            </form>                        </div>
+                            </form>                        
+                        </div>
                         
                     </div>
                     @endif

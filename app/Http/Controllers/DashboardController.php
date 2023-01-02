@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -17,36 +18,14 @@ class DashboardController extends Controller
         return view('dashboard', compact('products', 'categories', 'sub_categories'));
     }
 
-    public function seller()
-    {
-        $categories = Category::all();
-        $sub_categories = Subcategory::all();
-        return view('seller.dashboard', compact('categories', 'sub_categories'));
-    }
-
-    public function product()
-    {
-        $categories = Category::all();
-        $sub_categories = Subcategory::all();
-        return view('seller.product.products', compact('categories', 'sub_categories'));
-    }
-
-    public function buyer()
-    {
-        return view('buyer.dashboard');
-    }
-
-    public function bbforce()
-    {
-        return view('bbforce.dashboard');
-    }
-
     
-    //reward
-    public function reward()
-    {
-        return view('reward.dashboard');
-    }
 
+    //testing
+    public function testing()
+    {
+        $categories = Category::all();
+        $sub_categories = Subcategory::all();
+        return view('testing', compact('categories', 'sub_categories'));
+    }
 
 }
