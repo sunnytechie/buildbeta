@@ -139,16 +139,25 @@
 
                             <nav class="main-nav">
                                 <ul class="menu  menu-vertical sf-arrows no-animation">
-                                    @if (Auth::user()->is_seller == 1)
-                                    <li class="active border-0"><a href="{{ route('seller.dashboard') }}">Dashboard</a></li>
-                                    @else
-                                    <li class="active border-0"><a href="{{ route('buyer.dashboard') }}">Dashboard</a></li>
+                                    @if (Auth::user()->is_bbforce == 1)
+                                    <li class="active border-0"><a href="{{ route('bbforce.dashboard') }}">As A Bbforce</a></li>
                                     @endif
+                                    
+                                    @if (Auth::user()->is_seller == 1)
+                                    <li class="active border-0"><a href="{{ route('seller.dashboard') }}">As A Service Provider</a></li>
+                                    @endif
+
+                                    <li class="active border-0"><a href="{{ route('buyer.dashboard') }}">As A Buyer</a></li>
                                     
                                     @if (Auth::user()->is_seller == 1)
                                     <li class="active border-0"><a href="{{ route('product.dashboard') }}">Product</a></li>
                                     @endif
+
+                                    @if (Auth::user()->is_seller == 1)
                                     <li class="active border-0"><a href="{{ route('seller.settings') }}">Settings</a></li>
+                                    @else
+                                    <li class="active border-0"><a href="{{ route('buyer.settings') }}">Settings</a></li>
+                                    @endif
                                     <li class="active border-0"><a href="{{ route('profile.edit') }}">Account details</a></li>
                                     
                                     <li class="active border-0 ml-2 mt-1">
