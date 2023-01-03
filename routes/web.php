@@ -54,7 +54,7 @@ Route::get('/buyer-dashboard', [UserController::class, 'buyer'])->name('buyer.da
 //Buyer Settings page
 Route::get('/buyer-settings', [UserController::class, 'buyerSettings'])->name('buyer.settings')->middleware('auth', 'verified');
 //Bbforce Dashboard
-Route::get('/bbforce-dashboard', [DashboardController::class, 'bbforce'])->name('bbforce.dashboard')->middleware('auth', 'is_bbforce', 'verified');
+Route::get('/bbforce-dashboard', [UserController::class, 'bbforce'])->name('bbforce.dashboard')->middleware('auth', 'is_Bbforce', 'verified');
 //reward store
 Route::get('/reward-store', [UserController::class, 'reward'])->name('reward.store')->middleware('auth', 'verified');
 

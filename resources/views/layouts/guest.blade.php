@@ -172,6 +172,7 @@
     <!-- Switcher js -->
     <script src="{{ asset('main/assets/switcher/js/switcher.js') }}"></script>
 
+    {{-- disable submit button when it clicked --}}
     <script>
         $('form').submit(function (event) {
         if ($(this).hasClass('submitted')) {

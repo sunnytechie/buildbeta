@@ -198,7 +198,6 @@
         <!-- End .main -->
 
         <footer class="footer" style="margin-top: 12rem">
-
             <div class="container">
                 <div class="footer-bottom pb-2 d-flex justify-content-between align-items-center flex-wrap">
                     <p class="footer-copyright py-3 pr-sm-4 pr-0 mb-0">BuildBeta. &copy; 2023. All Rights Reserved
@@ -292,6 +291,20 @@
                 }
             })
         });
+    </script>
+
+    {{-- disable submit button when it clicked --}}
+    <script>
+        $('form').submit(function (event) {
+        if ($(this).hasClass('submitted')) {
+            event.preventDefault();
+            document.getElementById("submit").disabled = true;
+        }
+        else {
+            $(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i>');
+            $(this).addClass('submitted');
+        }
+    });
     </script>
 </body>
 

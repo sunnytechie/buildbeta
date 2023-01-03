@@ -215,5 +215,19 @@
             });
         }, 5000);
     </script>
+
+    {{-- disable submit button when it clicked --}}
+    <script>
+        $('form').submit(function (event) {
+        if ($(this).hasClass('submitted')) {
+            event.preventDefault();
+            document.getElementById("submit").disabled = true;
+        }
+        else {
+            $(this).find(':submit').html('<i class="fa fa-spinner fa-spin"></i>');
+            $(this).addClass('submitted');
+        }
+    });
+    </script>
     </body>
 </html>

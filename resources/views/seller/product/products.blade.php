@@ -60,10 +60,18 @@
         <div class="d-flex mb-5 justify-content-between">
             <h3 class="account-sub-title d-md-block mt-3" style="font-size: 20px">My Products</h3>
 
-            <div class="d-flex mt-3">
-                <span class="mr-5"><img src="{{ asset('general/imgs/icons/history.svg') }}"
-                        alt="History"></span>
-                <span><img src="{{ asset('general/imgs/icons/cart.svg') }}" alt=""></span>
+            <div class="d-flex mt-3" style="margin-right: 20px">
+                {{-- dropdown --}}
+                <div class="dropdown">
+                    <div id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ asset('general/imgs/icons/history.svg') }}" alt="History">
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-right: 85px">
+                        <a class="dropdown-item py-4 px-5" href="{{ route('reward.store') }}" style="font-family: 'Poppins'; font-size: 12px">Reward Store</a>
+                        <a class="dropdown-item pb-4 px-5" href="{{ route('seller.settings') }}" style="font-family: 'Poppins'; font-size: 12px">Settings</a>
+                    </div>
+                </div>
             </div>
         </div>
 

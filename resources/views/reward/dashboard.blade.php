@@ -1,4 +1,4 @@
-@extends('layouts.userDashboard')
+@extends('layouts.user')
 @section('content')
     <style>
             .hide-from-dashboard, .mobile-tab {
@@ -41,107 +41,55 @@
             }
     </style>
 
-<div class="my-5 mt-1">
-    <div class="row">
-        <div class="sidebar hide-from-mobile widget widget-dashboard mb-lg-0 mb-3 col-lg-3 order-0">
-            
-            {{-- menu bar and logo --}}
-            <div class="mb-2 ">
-                <a href="/" class="logo d-flex ml-1">
-                    <img height="30px" width="30px" src="{{ asset('general/imgs/icons/logo.svg') }}" alt=""> 
-                    <span class="mt-2">Buildbeta</span>
-                </a>
-                
-            </div>
-            <!-- End .logo -->
+<section class="section-1" style="min-height: 60vh">
+<div class="dashboard-content">
+    <div class="d-flex">
+        <h2 class="mt-3" style="font-style: normal; font-weight: 700; font-size: 16px; line-height: 160%; color: #000000; margin-top: 0.6rem">Reward Store</h2>
+    </div>
 
-            
-            <ul class="nav nav-tabs list flex-column mb-0" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard"
-                        role="tab" aria-controls="dashboard" aria-selected="true">Reward Store</a>
-                </li>
+    <div class="justify-content-center text-center" style="border: 5rem solid #cccccc; width: 180px; border-radius: 100px">
+        <div class="text-center" style="padding: 30px 22px"><span>12345</span></div>
+    </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" id="product-tab" data-toggle="tab" href="#product" role="tab"
-                        aria-controls="product" aria-selected="false">Products</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab"
-                        aria-controls="setting" aria-selected="true">Settings</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab"
-                        aria-controls="account" aria-selected="false">Account
-                        details</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Logout</a>
-                </li>
-            </ul>
+    <div class="d-flex my-4">
+        <div class="mr-5">
+            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; letter-spacing: -0.3px; color: #000000;">Total Point Value</div>
+            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #CCCCCC;">0</div>
         </div>
+        <div class="mr-5">
+            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; letter-spacing: -0.3px; color: #000000;">Purchase</div>
+            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #CCCCCC;">0</div>
+        </div>
+        <div class="mr-5">
+            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; letter-spacing: -0.3px; color: #000000;">Contracts</div>
+            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #CCCCCC;">0</div>
+        </div>
+    </div>
 
-
-        <div class="col-lg-9 order-lg-last order-1 tab-content">
-            <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
-                <div class="dashboard-content">
-                    <div class="d-flex">
-                        <a href="#" class="mt-1"><ion-icon name="arrow-back-outline" style="font-size: 20px"></ion-icon></a>
-                        <h2 class="ml-3" style="font-style: normal; font-weight: 700; font-size: 16px; line-height: 160%; color: #000000; margin-top: 0.6rem">Reward Store</h2>
-                    </div>
-
-                    <div class="my-4">
-                        <div>Pie chart here</div>
-                    </div>
-
-                    <div class="d-flex my-4">
-                        <div class="mr-5">
-                            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; letter-spacing: -0.3px; color: #000000;">Total Point Value</div>
-                            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #CCCCCC;">0</div>
-                        </div>
-                        <div class="mr-5">
-                            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; letter-spacing: -0.3px; color: #000000;">Purchase</div>
-                            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #CCCCCC;">0</div>
-                        </div>
-                        <div class="mr-5">
-                            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; letter-spacing: -0.3px; color: #000000;">Contracts</div>
-                            <div class="py-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #CCCCCC;">0</div>
-                        </div>
-                    </div>
-
-                    <div class="my-4">
-                        <h3 style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 16px; line-height: 160%; color: #000000;">Redeemable Bonuses</h3>
-                        <table class="table table-borderless">
-                            <thead>
-                              <tr>
-                                <th scope="col" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Bonus</th>
-                                <th scope="col" style="font-family: 'Poppins'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Point Value</th>
-                                <th scope="col"></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                  <td style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Voucher</td>
-                                  <td style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">2pv</td>
-                                  <td><a style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #CCCCCC;" href="#">Redeem</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-
-                </div>
-            </div><!-- End .tab-pane -->
-
-            @include('dashboardTabs')
-
-           
-        </div><!-- End .tab-content -->
-    </div><!-- End .row -->
+    <div class="my-4">
+        <h3 style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 16px; line-height: 160%; color: #000000;">Redeemable Bonuses</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-sm" id="basic-datatable">
+                <thead>
+                    <tr>
+                        <th style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Bonus</th>
+                        <th style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Point Value</th>
+                        <th style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Voucher</td>
+                        <td style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">2pv</td>
+                        <td class="text-danger" style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px;">
+                            <a href="#" style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #0080E6;">Redeem</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-
+</section>
 
 @endsection

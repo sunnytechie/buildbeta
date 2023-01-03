@@ -50,7 +50,6 @@
                         <a class="dropdown-item pb-4 px-5" href="{{ route('seller.settings') }}" style="font-family: 'Poppins'; font-size: 12px">Settings</a>
                     </div>
                 </div>
-                
             </div>
         </div>
 
