@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-6 offset-md-3">
                     <div class="pt-5 pb-5">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form class="mobile-arrange" method="POST" action="{{ route('login') }}">
                             @csrf
 
                             {{-- header --}}

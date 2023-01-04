@@ -4,21 +4,30 @@
             <img style="margin: 0 auto" height="26" width="26" src="{{ asset('general/imgs/icons/home-blue.svg') }}" alt=""><span style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 10px; line-height: 120%; letter-spacing: -0.3px; color: #000000;">Home</span>
         </a>
     </div>
+
     <div class="sticky-info border-0" style="width: auto">
         <a href="{{ route('browse') }}">
             <img style="margin: 0 auto" height="26" width="26" src="{{ asset('general/imgs/icons/product.svg') }}" alt=""><span style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 10px; line-height: 120%; letter-spacing: -0.3px; color: #000000;">Products</span>
         </a>
     </div>
+
+    {{-- If not quest --}}
+    @if (Auth::check())
+    @if (Auth::user()->is_seller == 1)
     <div class="sticky-info border-0" style="width: auto">
         <a href="{{ route('product.dashboard') }}">
             <img style="margin: 0 auto" height="26" width="26" src="{{ asset('general/imgs/icons/post.svg') }}" alt=""><span class="pl-1" style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 10px; line-height: 120%; letter-spacing: -0.3px; color: #000000;">Post</span>
         </a>
     </div>
+    @endif
+    @endif
+
     <div class="sticky-info border-0" style="width: auto">
         <a href="{{ route('job') }}">
             <img style="margin: 0 auto" height="26" width="26" src="{{ asset('general/imgs/icons/job.svg') }}" alt=""><span style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 10px; line-height: 120%; letter-spacing: -0.3px; color: #000000;">Jobs</span>
         </a>
     </div>
+
     <div class="sticky-info border-0" style="width: auto">
         <a href="{{ route('seller.dashboard') }}">
             <img style="margin: 0 auto" height="26" width="26" src="{{ asset('general/imgs/icons/dashboard.svg') }}" alt=""><span style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 10px; line-height: 120%; letter-spacing: -0.3px; color: #000000;">Dashboard</span>

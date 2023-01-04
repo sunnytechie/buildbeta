@@ -61,16 +61,13 @@
                                 
                                 <li><a href="#">Help Center</a></li>
                                 <li><a href="#">Get the App</a></li>
-                                {{-- <li><a href="wishlist.html">My Wishlist</a></li> --}}
-                                {{-- <li><a href="#" class="login-link">Log In</a></li> --}}
                             </ul>
                         </div>
                         <!-- End .header-menu -->
                     </div>
                     <!-- End .header-dropown -->
 
-                    <span class="separator"></span>
-
+                    {{-- <span class="separator"></span>
                     <div class="header-dropdown">
                         <a href="#"><i class="flag-us flag"></i>ENG</a>
                         <div class="header-menu">
@@ -94,7 +91,7 @@
                         </div>
                         <!-- End .header-menu -->
                     </div>
-                    <!-- End .header-dropown -->
+                    <!-- End .header-dropown --> --}}
 
                     <span class="separator"></span>
 
@@ -156,17 +153,24 @@
                     <!-- End .header-search -->
 
                     <div class="header-contact d-none d-lg-flex pl-0 ml-3 mr-xl-4">
-                    <div class="header-icon mb-0">
-                        <a href="{{ route('product.dashboard') }}">
-                            <ion-icon name="add-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Post products"></ion-icon>
-                        </a>
-                    </div>
-                    
-                    <div class="header-icon mb-0">
-                        <a href="#">
-                            <ion-icon name="notifications-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="See Notifications"></ion-icon>
-                        </a>
-                    </div>
+                        @if (Auth::check())
+                        @if (Auth::user()->is_seller == 1)
+                            <div class="header-icon mb-0">
+                                <a href="{{ route('product.dashboard') }}">
+                                    <ion-icon name="add-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Post products"></ion-icon>
+                                </a>
+                            </div>
+                        @endif
+                        @endif
+
+                        @if (Auth::check())
+                        <div class="header-icon mb-0">
+                            <a href="#">
+                                <ion-icon name="notifications-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="See Notifications"></ion-icon>
+                            </a>
+                        </div>
+                        @endif
+
                     </div>
                     
                     @if (Auth::guest())
@@ -268,19 +272,27 @@
                     </div>
                     <!-- End .header-search -->
 
+                    @if (Auth::check())
                     <div class="header-contact d-none d-lg-flex pl-0 ml-3 mr-xl-4">
-                        <div class="header-icon mb-0">
-                            <a href="{{ route('product.dashboard') }}">
-                                <ion-icon name="add-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Post products"></ion-icon>
-                            </a>
-                        </div>
                         
-                        <div class="header-icon mb-0">
-                            <a href="#">
-                                <ion-icon name="notifications-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="See Notifications"></ion-icon>
-                            </a>
-                        </div>
+                            @if (Auth::user()->is_seller == 1)
+                            <div class="header-icon mb-0">
+                                <a href="{{ route('product.dashboard') }}">
+                                    <ion-icon name="add-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="Post products"></ion-icon>
+                                </a>
+                            </div>
+                            @endif
+                       
+                        
+                        @if(Auth::check())
+                          <div class="header-icon mb-0">
+                                <a href="#">
+                                    <ion-icon name="notifications-circle" style="font-size: 25px" data-toggle="tooltip" data-placement="bottom" title="See Notifications"></ion-icon>
+                                </a>
+                            </div> 
+                        @endif
                     </div>
+                    @endif
 
                     @if (Auth::guest())
                     <a href="{{ route('login') }}" class="header-icon" title="Login">
@@ -309,8 +321,8 @@
                             <a class="dropdown-item" href="#"><ion-icon name="share-social-outline"></ion-icon> Share</a>
                             <form class="mb-0" method="POST" action="{{ route('logout') }}">
                                 @csrf
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                            this.closest('form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                this.closest('form').submit();"><ion-icon name="power-outline"></ion-icon> Logout</a>
                             </form>                        
                         </div>
                         
