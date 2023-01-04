@@ -142,7 +142,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 @media screen and (max-width: 480px) {
   .mobile-arrange {
-    padding-top: 35px !important;
+    padding-top: 55px !important;
     min-height: 40vh !important;
     margin: auto 0 !important;
   }
