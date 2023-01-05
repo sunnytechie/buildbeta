@@ -147,3 +147,29 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     margin: auto 0 !important;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .top-banners {
+    display: none !important;
+  }
+}
+
+.requirement-bg:hover {
+  border: 1px solid #0080E6 !important;
+  cursor: pointer;
+}
+
+.requirement-bg {
+  border-top: 1px solid #fff !important;
+  border-bottom: 1px solid #fff !important;
+  border-right: 1px solid rgb(243, 238, 238) !important;
+  border-left: 1px solid rgb(243, 238, 238) !important;
+}
+
+.home-need-tab ul li a {
+  border-bottom: 1px solid #fff;
+}
+
+.home-need-tab ul li a.active {
+  border-bottom: 1px solid #0080E6 !important;
+}
