@@ -21,8 +21,9 @@
                 </figure>
                 <button class="btn p-1" style="position: absolute; margin-top: -30px; margin-left: 8px; background: #0080E6; color: #fff; line-height: 16px; font-size: 10px; text-transform: capitalize; font-weight: 600">{{ $product->category->title }}</button>
 
-                <div class="category-tag">
-                    <a href="#" class="p-2 btn" style="text-transform:inherit; font-family: 'Poppins'; color: #ccc; font-size: 12px; line-height: 16px; font-weight: 400;">BuildBeta</a>
+                <div class="category-tag d-flex justify-content-between">
+                    <a href="#" class="p-2 btn" style="text-transform:inherit; font-family: 'Poppins'; color: #ccc; font-size: 12px; line-height: 16px; font-weight: 400;">Independent Seller</a>
+                    <div class="p-2" style="font-size: 10px">Verified</div>
                 </div>
 
                 <div class="justify-content-start p-2 pb-4" style="font-family: 'Poppins'; font-style: normal; font-weight: 400;font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">
