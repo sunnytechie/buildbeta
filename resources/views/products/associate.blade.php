@@ -23,7 +23,7 @@
 
                 <div class="category-tag d-flex justify-content-between">
                     <a href="#" class="p-2 btn" style="text-transform:inherit; font-family: 'Poppins'; color: #ccc; font-size: 12px; line-height: 16px; font-weight: 400;">TA Vendors</a>
-                    <div class="p-2" style="font-size: 10px">Verified</div>
+                    <div class="p-2 d-flex justify-content-center" style="font-size: 10px; color: #0080E6"><ion-icon name="shield-checkmark-outline" style="margin-top: 2px; margin-right: 3px"></ion-icon> <span>Verified</span></div>
                 </div>
 
                 <div class="justify-content-start p-2 pb-4" style="font-family: 'Poppins'; font-style: normal; font-weight: 400;font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">

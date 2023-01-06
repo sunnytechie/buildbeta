@@ -66,5 +66,7 @@ class Kernel extends HttpKernel
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
         'is_seller' => \App\Http\Middleware\IsSeller::class,
         'is_Bbforce' => \App\Http\Middleware\IsBbforce::class,
+        'can_post' => \App\Http\Middleware\CanPost::class,
+        'verified_seller' => \App\Http\Middleware\VerifiedSeller::class,
     ];
 }

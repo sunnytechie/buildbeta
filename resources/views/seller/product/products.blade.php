@@ -54,6 +54,15 @@
         max-width: 500px !important;
         min-width: 300px !important;
     }
+
+    .modal-footer, .modal-header {
+        height: auto !important;
+    }
+
+    .modal-header {
+        background: #0080E6 !important;
+        border-radius: 0 !important;
+    }
 </style>
 <section class="section-1" style="min-height: 60vh">
     <div class="dashboard-content mb-5">
@@ -84,8 +93,9 @@
                         <span
                             style="font-size: 16px; font-style: normal; font-weight: 700; font-family: 'Poppins'; font-size: 16px; line-height: 160%; color: #000000;">Obioma
                             JC</span>
-                        <img class="verified-tag ml-2" draggable="false" src="{{ asset('general/imgs/icons/verified.svg') }}"
-                            alt="">
+                            @if (Auth::user()->verified_seller)
+                            <img class="ml-2" src="{{ asset('general/imgs/icons/verified.svg') }}" alt="verified">
+                            @endif
                     </h3>
                     <span
                         style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Seller</span>
@@ -175,16 +185,17 @@
         
         
         <!-- The Modal -->
-        <div class="modal" id="myModal">
+        @if (Auth::user()->can_post)
+           <div class="modal" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">
         
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <h4 class="modal-title"
-                            style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 16px; line-height: 160%; color: #000000;">
+                            style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 160%; color: #ffffff;">
                             Post Product</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal"><span style="color: #FFFFFF"><ion-icon name="close-circle" data-toggle="tooltip" data-placement="bottom" title="close"></ion-icon></span></button>
                     </div>
         
                     <form action="#">
@@ -291,14 +302,40 @@
                         </div>
         
                         <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="submit" class="btn w-100 p-3 bb-bg-btn" style="text-transform: capitalize; font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 160%; letter-spacing: -0.3px;">Post Product</button>
+                        <div class="modal-footer border-0 justify-content-center pb-4 pt-1">
+                            <button type="submit" class="btn px-3 py-2 bb-bg-btn btn-sm" style="text-transform: capitalize; font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 160%; letter-spacing: -0.3px;">Post Product</button>
                         </div>
         
                     </form>
                 </div>
             </div>
-        </div>
+        </div> 
+        @else
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+        
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title"
+                            style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 160%; color: #ffffff;">
+                            Post Product</h4>
+                        <button type="button" class="close" data-dismiss="modal"><span style="color: #FFFFFF"><ion-icon name="close-circle" data-toggle="tooltip" data-placement="bottom" title="close"></ion-icon></span></button>
+                    </div>
+
+                    <div class="p-5">
+                        <h4 style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 14px; line-height: 160%; color: #000000;">You are not eligible to post.</h4>
+                        <p>Please update your profile to post your product.</p>
+                        <p class="mb-3">If you are logged in, kindly click the link below.</p>
+                        <a href="{{ route('seller.settings') }}" class="btn bb-bg-btn btn-sm text-white">Setting up your profile here...</a>
+                    </div>
+
+                </div>
+            </div>
+        </div> 
+        @endif
+        
         
 
 

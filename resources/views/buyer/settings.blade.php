@@ -69,6 +69,9 @@
                             <span
                                 style="font-size: 16px; font-style: normal; font-weight: 700; font-family: 'Poppins'; font-size: 16px; line-height: 160%; color: #000000;">Obioma
                                 JC</span>
+                                @if (Auth::user()->verified_seller)
+                            <img class="ml-2" src="{{ asset('general/imgs/icons/verified.svg') }}" alt="verified">
+                            @endif
                         </h3>
                         <span
                             style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">Buyer</span>

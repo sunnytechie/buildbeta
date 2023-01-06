@@ -112,7 +112,7 @@
                             </a>
 
                         
-                            <a href="#" title="Wishlist" class="header-icon show-only-mobile">
+                            <a href="{{ route('market') }}" title="Wishlist" class="header-icon show-only-mobile">
                                 <i class="icon-user-2"></i>
                             </a>
                         </div>
@@ -130,7 +130,7 @@
 							</button>
 
                             <a href="#" class="logo mt-3 mb-2">
-                                <img width="35" height="35" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" alt="">
+                                <img width="35" height="35" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" alt="BuildBeta">
                             </a>
                         </div>
                         <!-- End .header-left -->

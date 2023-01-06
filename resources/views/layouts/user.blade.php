@@ -129,8 +129,8 @@
 								<i class="fas fa-bars"></i>
 							</button>
 
-                            <a href="#" class="logo mt-3 mb-2">
-                                <img width="35" height="35" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" alt="">
+                            <a href="{{ route('market') }}" class="logo mt-3 mb-2">
+                                <img width="35" height="35" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" alt="BuildBeta">
                             </a>
                         </div>
                         <!-- End .header-left -->
