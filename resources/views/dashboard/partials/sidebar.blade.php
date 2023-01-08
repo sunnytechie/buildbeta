@@ -82,6 +82,7 @@
                 <li class="sub-category">
                     <h3>Posts</h3>
                 </li>
+
                 <li class="slide">
                     
                     <a class="side-menu__item has-link
@@ -92,6 +93,7 @@
                             class="side-menu__icon fe fe-layers"></i><span
                             class="side-menu__label">Category</span></a>
                 </li>
+
                 <li class="slide">
                     <a class="side-menu__item has-link
                     @if(request()->routeIs('subcategories.index'))
@@ -156,6 +158,15 @@
                             class="side-menu__label">Bbforce Member</span></a>
                 </li>
 
+                <li class="slide">
+                    <a class="side-menu__item has-link
+                    @if(request()->routeIs('unverified'))
+                        active
+                    @endif"
+                     data-bs-toggle="slide" href="{{ route('unverified') }}"><i
+                            class="side-menu__icon fe fe-shield-off"></i><span
+                            class="side-menu__label">Unverified Users</span></a>
+                </li>
 
 
                 <li class="sub-category">

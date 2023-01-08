@@ -98,8 +98,12 @@
     
 
     @include('dashboard.partials.footer')
+
     <!-- BACK-TO-TOP -->
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- JQUERY JS -->
     <script src="{{ asset('main/assets/js/jquery.min.js') }}"></script>

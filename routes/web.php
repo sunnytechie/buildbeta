@@ -1,18 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\BbforceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacancyController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UnverifiedController;
 use App\Http\Controllers\PersonalizeController;
 use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\BbforceController;
-use App\Http\Controllers\BuyerController;
-use App\Http\Controllers\UserController;
 
 //Auth Bbforce & Seller Reg
 Route::get('/welcome', [PersonalizeController::class, 'welcome'])->name('welcome');
@@ -44,15 +45,20 @@ Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.
 
 //testing page
 Route::get('/testing', [DashboardController::class, 'testing'])->name('testing')->middleware('auth', 'is_admin', 'verified');
+
 //Seller Dashboard
 Route::get('/service-provider-dashboard', [UserController::class, 'seller'])->name('seller.dashboard')->middleware('auth', 'is_seller', 'verified');
 Route::get('/service-provider-products', [UserController::class, 'product'])->name('product.dashboard')->middleware('auth', 'is_seller', 'verified');
+//Post Product
+Route::post('/post-product', [ProductController::class, 'storeProductBySeller'])->name('seller.product.store')->middleware('auth', 'is_seller', 'verified');
 //Seller Settings page
 Route::get('/service-provider-settings', [UserController::class, 'sellerSettings'])->name('seller.settings')->middleware('auth', 'is_seller', 'verified');
+
 //Buyer Dashboard
 Route::get('/buyer-dashboard', [UserController::class, 'buyer'])->name('buyer.dashboard')->middleware('auth', 'verified');
 //Buyer Settings page
 Route::get('/buyer-settings', [UserController::class, 'buyerSettings'])->name('buyer.settings')->middleware('auth', 'verified');
+
 //Bbforce Dashboard
 Route::get('/bbforce-dashboard', [UserController::class, 'bbforce'])->name('bbforce.dashboard')->middleware('auth', 'is_Bbforce', 'verified');
 //reward store
@@ -82,6 +88,10 @@ Route::delete('/users/delete/{id}', [UserController::class, 'destroy'])->name('u
 Route::get('/seller-users', [SellerController::class, 'index'])->name('sellers');
 //users that are buyers
 Route::get('/buyer-users', [BuyerController::class, 'index'])->name('buyers');
+//users unverified
+Route::get('/unverified-users', [UnverifiedController::class, 'index'])->name('unverified');
+//Approve users verification
+Route::post('/users/approve/{id}', [UnverifiedController::class, 'approveUser'])->name('users.approve');
 });
 
 require __DIR__.'/auth.php';

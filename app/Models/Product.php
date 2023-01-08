@@ -27,6 +27,9 @@ class Product extends Model
         'subcategory_title',
         'provider_id',
         'publish',
+        'city',
+        'country',
+        'address',
         'user_id',
         'seller_id',
     ];

@@ -57,10 +57,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Models\Product');
     }
 
-    //hasMany sellers
-    public function sellers()
+    //hasOne seller
+    public function seller()
     {
-        return $this->hasMany('App\Models\Seller');
+        return $this->hasOne('App\Models\Seller');
     }
 
     //hasMany bbforce

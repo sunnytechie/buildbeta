@@ -66,6 +66,7 @@
 </style>
 <section class="section-1" style="min-height: 60vh">
     <div class="dashboard-content mb-5">
+
         <div class="d-flex mb-5 justify-content-between">
             <h3 class="account-sub-title d-md-block mt-3" style="font-size: 20px">My Products</h3>
 
@@ -165,15 +166,31 @@
                     style="text-transform: capitalize; background: #CCCCCC; font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; text-align: center; letter-spacing: -0.3px; color: #FFFFFF;">Contracts</button>
             </div>
         </div>
+
+        {{-- session --}}
+        @if (session('message'))
+            {{-- alert --}}
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {{ session('message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-top: 6px">
+              <span aria-hidden="true"><ion-icon name="close-circle-outline"></ion-icon></span>
+            </button>
+          </div>
+        @endif
         
         <div class="row mt-5">
             @foreach ($products as $product)
             <div class="col-md-3 col-6">
                 <a href="#" style="text-decoration: none">
                     <div class="card border-0">
-                        <img src="{{ $product->image }}" class="card-img-top" alt="...">
+                        <img src="/storage/{{ $product->image }}" class="card-img-top" alt="...">
                         <div class="card-body px-0 py-2 border-0" style="min-height: auto">
-                            <a href="#" class="p-2 btn" style="text-transform:inherit; font-family: 'Poppins'; color: #ccc; font-size: 12px; line-height: 16px; font-weight: 400; text-decoration: none;">BuildBeta</a>
+                            @if ($product->publish == 0)
+                            <div class="d-flex" style="text-transform:inherit; font-family: 'Poppins'; color: rgb(0, 0, 0); font-size: 12px; line-height: 16px; font-weight: 400; text-decoration: none;">
+                                <ion-icon name="time-outline" style="margin-top: 2px; margin-right: 3px"></ion-icon> 
+                                <span>In Review.</span>
+                            </div>
+                            @endif
                             <h5 class="card-title pl-2" style="font-family: 'Poppins'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 160%; letter-spacing: -0.3px; color: #000000;">{{ $product->title }}</h5>
                         </div>
                     </div>
@@ -181,8 +198,6 @@
             </div>
             @endforeach   
         </div>
-        
-        
         
         <!-- The Modal -->
         @if (Auth::user()->can_post)
@@ -198,13 +213,15 @@
                         <button type="button" class="close" data-dismiss="modal"><span style="color: #FFFFFF"><ion-icon name="close-circle" data-toggle="tooltip" data-placement="bottom" title="close"></ion-icon></span></button>
                     </div>
         
-                    <form action="#">
+                    <form action="{{ route('seller.product.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
                         <!-- Modal body -->
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     <input type="file" class="dropify @error('image') is-invalid @enderror" id="image"
-                                        name="image" data-bs-height="145">
+                                        name="image" data-bs-height="145" required>
         
                                     @if ($errors->has('image'))
                                         <div id="imageHelp" class="form-text text-danger">
@@ -222,21 +239,37 @@
                                     <div class="row">
                                         <div class="col-md-6 col-6">
                                             <div class="form-group">
-                                                <input type="file" class="dropify @error('image') is-invalid @enderror"
-                                                    id="image" name="image" data-bs-height="100">
+                                                <input type="file" class="dropify @error('thumbnail') is-invalid @enderror"
+                                                    id="thumbnail" name="thumbnail" data-bs-height="100">
+                                                    @if ($errors->has('thumbnail'))
+                                                        <div id="thumbnailHelp" class="form-text text-danger">
+                                                            <div>{{ $errors->first('thumbnail') }}</div>
+                                                        </div>
+                                                    @endif
                                             </div>
                                         </div>
+
                                         <div class="col-md-6 col-6">
                                             <div class="form-group">
-                                                <input type="file" class="dropify @error('image') is-invalid @enderror"
-                                                    id="image" name="image" data-bs-height="100">
+                                                <input type="file" class="dropify @error('thumbnail1') is-invalid @enderror"
+                                                    id="thumbnail1" name="thumbnail1" data-bs-height="100">
+                                                    @if ($errors->has('thumbnail1'))
+                                                        <div id="thumbnail1Help" class="form-text text-danger">
+                                                            <div>{{ $errors->first('thumbnail1') }}</div>
+                                                        </div>
+                                                    @endif
                                             </div>
                                         </div>
         
                                         <div class="col-md-6 col-6">
                                             <div class="form-group">
-                                                <input type="file" class="dropify @error('image') is-invalid @enderror"
-                                                    id="image" name="image" data-bs-height="100">
+                                                <input type="file" class="dropify @error('thumbnail2') is-invalid @enderror"
+                                                    id="thumbnail2" name="thumbnail2" data-bs-height="100">
+                                                    @if ($errors->has('thumbnail2'))
+                                                        <div id="thumbnail2Help" class="form-text text-danger">
+                                                            <div>{{ $errors->first('thumbnail2') }}</div>
+                                                        </div>
+                                                    @endif
                                             </div>
                                         </div>
                                     </div>

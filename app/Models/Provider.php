@@ -22,7 +22,7 @@ class Provider extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
-
+    
     //has many sellers
     public function sellers()
     {

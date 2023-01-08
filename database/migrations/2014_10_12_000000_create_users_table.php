@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('avatar')->nullable();
             $table->string('user_type')->default('buyer');
+            $table->integer('provider_id')->nullable();
             $table->string('can_post')->default(0);
             $table->string('verified_seller')->default(0);
             $table->string('is_admin')->default(0);

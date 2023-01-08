@@ -22,7 +22,7 @@ class Seller extends Model
     {
         return $this->belongsTo('App\Models\Provider');
     }
-   
+
     //belongs to user
     public function user()
     {

@@ -32,6 +32,9 @@ return new class extends Migration
             $table->string('subcategory_title')->nullable();
             $table->string('provider_id')->nullable();
             $table->string('publish')->default(0);
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
+            $table->text('address')->nullable();
 
             $table->timestamps();
         });
