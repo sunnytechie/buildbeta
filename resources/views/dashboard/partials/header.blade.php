@@ -14,7 +14,7 @@
             <div class="main-header-center ms-3 d-none d-lg-block">
                 {{-- <input type="text" class="form-control" id="typehead" placeholder="Search for results...">
                 <button class="btn px-0 pt-2"><i class="fe fe-search" aria-hidden="true"></i></button> --}}
-                ...Real Peaple real deal.
+                <div>...Real Peaple real deal.</div>
             </div>
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
                 

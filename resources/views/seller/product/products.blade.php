@@ -63,6 +63,21 @@
         background: #0080E6 !important;
         border-radius: 0 !important;
     }
+    /* .dropify-wrapper {
+        height: 220px !important;
+    }
+    .dropify-preview {
+        height: 220px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    } */
+
+    #showMore .dropify-wrapper {
+        height: 160px !important;
+    }
+    #showMore .dropify-preview {
+        height: 160px !important;
+    }
 </style>
 <section class="section-1" style="min-height: 60vh">
     <div class="dashboard-content mb-5">
@@ -219,9 +234,66 @@
                         <!-- Modal body -->
                         <div class="modal-body">
                             <div class="row">
+                                        
+                                <div class="form-group col-md-12">
+                                    <input type="title" class="form-control @error('title') is-invalid @enderror"
+                                        value="{{ old('title') }}" id="title" name="title"
+                                        aria-describedby="titleHelp" required placeholder="Category Name"
+                                        style="border-radius: 0;">
+        
+                                    @if ($errors->has('title'))
+                                        <div id="titleHelp" class="form-text text-danger">
+                                            <div>{{ $errors->first('title') }}</div>
+                                        </div>
+                                    @endif
+                                </div>
+        
+        
+                                <div class="col-md-12 form-group">
+                                    <select class="form-control @error('category_id') is-invalid @enderror" id="category_id"
+                                        name="category_id" required>
+                                        <option value="">Select Category</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('category_id'))
+                                        <div id="category_idHelp" class="form-text text-danger">
+                                            <div>{{ $errors->first('category_id') }}</div>
+                                        </div>
+                                    @endif
+                                </div>
+        
+        
+                                <div class="col-md-12 form-group">
+                                    <select class="form-control @error('subcategory_id') is-invalid @enderror"
+                                        id="subcategory_id" name="subcategory_id" required>
+                                        <option value="">Select Sub Category</option>
+                                        @foreach ($sub_categories as $sub_category)
+                                            <option value="{{ $sub_category->id }}">{{ $sub_category->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('subcategory_id'))
+                                        <div id="subcategory_idHelp" class="form-text text-danger">
+                                            <div>{{ $errors->first('subcategory_id') }}</div>
+                                        </div>
+                                    @endif
+                                </div>
+        
+        
+                                <div class="col-md-12 form-group">
+                                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
+                                        rows="3" placeholder="Write about your product" style="border-radius: 0;" required>{{ old('description') }}</textarea>
+                                    @if ($errors->has('description'))
+                                        <div id="descriptionHelp" class="form-text text-danger">
+                                            <div>{{ $errors->first('description') }}</div>
+                                        </div>
+                                    @endif
+                                </div>
+
                                 <div class="col-md-12 mb-3">
                                     <input type="file" class="dropify @error('image') is-invalid @enderror" id="image"
-                                        name="image" data-bs-height="145" required>
+                                        name="image" data-bs-height="245" required>
         
                                     @if ($errors->has('image'))
                                         <div id="imageHelp" class="form-text text-danger">
@@ -273,62 +345,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-        
-                                <div class="form-group col-md-12">
-                                    <input type="title" class="form-control @error('title') is-invalid @enderror"
-                                        value="{{ old('title') }}" id="title" name="title"
-                                        aria-describedby="titleHelp" required placeholder="Category Name"
-                                        style="border-radius: 0;">
-        
-                                    @if ($errors->has('title'))
-                                        <div id="titleHelp" class="form-text text-danger">
-                                            <div>{{ $errors->first('title') }}</div>
-                                        </div>
-                                    @endif
-                                </div>
-        
-        
-                                <div class="col-md-12 form-group">
-                                    <select class="form-control @error('category_id') is-invalid @enderror" id="category_id"
-                                        name="category_id" required>
-                                        <option value="">Select Category</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->title }}</option>
-                                        @endforeach
-                                    </select>
-                                    @if ($errors->has('category_id'))
-                                        <div id="category_idHelp" class="form-text text-danger">
-                                            <div>{{ $errors->first('category_id') }}</div>
-                                        </div>
-                                    @endif
-                                </div>
-        
-        
-                                <div class="col-md-12 form-group">
-                                    <select class="form-control @error('subcategory_id') is-invalid @enderror"
-                                        id="subcategory_id" name="subcategory_id" required>
-                                        <option value="">Select Sub Category</option>
-                                        @foreach ($sub_categories as $sub_category)
-                                            <option value="{{ $sub_category->id }}">{{ $sub_category->title }}</option>
-                                        @endforeach
-                                    </select>
-                                    @if ($errors->has('subcategory_id'))
-                                        <div id="subcategory_idHelp" class="form-text text-danger">
-                                            <div>{{ $errors->first('subcategory_id') }}</div>
-                                        </div>
-                                    @endif
-                                </div>
-        
-        
-                                <div class="col-md-12 form-group">
-                                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
-                                        rows="3" placeholder="Description" style="border-radius: 0;" required>{{ old('description') }}</textarea>
-                                    @if ($errors->has('description'))
-                                        <div id="descriptionHelp" class="form-text text-danger">
-                                            <div>{{ $errors->first('description') }}</div>
-                                        </div>
-                                    @endif
                                 </div>
                             </div>
         

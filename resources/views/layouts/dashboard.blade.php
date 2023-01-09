@@ -55,11 +55,15 @@
     
     <body class="app sidebar-mini ltr light-mode">
 
-        <!-- GLOBAL-LOADER -->
-        <div id="global-loader" style="user-select: none;">
-            <img height="80px" width="70px" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
-        </div>
-        <!-- /GLOBAL-LOADER -->
+        {{-- Only show loader on home url --}}
+        @if (url()->current() == url('/dashboard'))
+            <!-- GLOBAL-LOADER -->
+            <div id="global-loader" style="user-select: none;">
+                <img height="80px" width="70px" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" class="loader-img" alt="Loader">
+            </div>
+            <!-- /GLOBAL-LOADER -->
+        @endif
+       
 
         <div class="page">
             <div class="page-main">

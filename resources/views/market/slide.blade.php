@@ -11,7 +11,7 @@
             
             <div class="home-slide home-slide1 banner banner-md-vw h-100">
                 <figure>
-                    <img class="slide-bg" src="{{ $slider->image }}"
+                    <img class="slide-bg" src="/storage/{{ $slider->image }}"
                         style="background-color: #555;" alt="slider image" width="835" height="445">
                 </figure>
 
@@ -43,45 +43,23 @@
     <div class="col-lg-3 top-banners">
         <div class="row">
             <div class="col-md-4 col-lg-12">
+                @foreach ($take2Slides as $slider)
                 <div class="banner banner1 banner-md-vw-large banner-sm-vw-large mb-2">
                     <figure>
-                        <img src="https://via.placeholder.com/240x113.png/CCCCCC?text=building+Faker+corporis"
+                        <img src="/storage/{{ $slider->image }}"
                             style="background-color: #ccc;" alt="banner" width="264" height="133">
                     </figure>
-                    <div class="banner-layer banner-layer-middle text-right">
+                    {{-- <div class="banner-layer banner-layer-middle text-right">
                         <h3 class="m-b-2">Buildings and Arc</h3>
                         <h4 class="text-secondary text-uppercase">Starting at $99</h4>
                         <a href="#" class="text-dark text-uppercase ls-10 py-1">Real Deal
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
+                @endforeach
                 <!-- End .banner -->
 
-                <div class="banner banner1 banner-md-vw-large banner-sm-vw-large mb-2">
-                    <figure>
-                        <img src="https://via.placeholder.com/240x113.png/DDDDDD?text=building+Faker+corporis"
-                            style="background-color: #ccc;" alt="banner" width="264" height="133">
-                    </figure>
-                    <div class="banner-layer banner-layer-middle text-right">
-                        <h3 class="m-b-2">Buildings and Arc</h3>
-                        <h4 class="text-secondary text-uppercase">Starting at $99</h4>
-                        <a href="#" class="text-dark text-uppercase ls-10 py-1">Real Deal
-                        </a>
-                    </div>
-                </div>
-
-                <div class="banner banner1 banner-md-vw-large banner-sm-vw-large mb-2">
-                    <figure>
-                        <img src="https://via.placeholder.com/240x113.png/AAAAAA?text=building+Faker+corporis"
-                            style="background-color: #ccc;" alt="banner" width="264" height="133">
-                    </figure>
-                    <div class="banner-layer banner-layer-middle text-right">
-                        <h3 class="m-b-2">Buildings and Arc</h3>
-                        <h4 class="text-secondary text-uppercase">Starting at $99</h4>
-                        <a href="#" class="text-dark text-uppercase ls-10 py-1">Real Deal
-                        </a>
-                    </div>
-                </div>
+                
             </div>
             
         </div>

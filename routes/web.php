@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\BbforceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -92,6 +93,18 @@ Route::get('/buyer-users', [BuyerController::class, 'index'])->name('buyers');
 Route::get('/unverified-users', [UnverifiedController::class, 'index'])->name('unverified');
 //Approve users verification
 Route::post('/users/approve/{id}', [UnverifiedController::class, 'approveUser'])->name('users.approve');
+
+//Slider thumbnails
+Route::get('/sliders', [SliderController::class, 'index'])->name('slider.index');
+Route::post('/sliders', [SliderController::class, 'store'])->name('slider.store');
+Route::get('/sliders/{id}/edit', [SliderController::class, 'edit'])->name('slider.edit');
+Route::put('/sliders/{id}', [SliderController::class, 'update'])->name('slider.update');
+Route::delete('/sliders/{id}', [SliderController::class, 'destroy'])->name('slider.destroy');
+//Slider publish
+Route::post('/sliders/publish/{id}', [SliderController::class, 'publish'])->name('slider.publish');
+//Slider unpublish
+Route::post('/sliders/unpublish/{id}', [SliderController::class, 'unpublish'])->name('slider.unpublish');
+
 });
 
 require __DIR__.'/auth.php';

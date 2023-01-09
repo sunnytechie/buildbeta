@@ -80,12 +80,13 @@
     <!-- End .page-wrapper -->
 
         {{-- Loader --}}
+        @if (url()->current() == url('/'))
         <div class="loading-overlay">
             <div class="bounce-loader" style="user-select: none;">
                 <img height="180" width="180" src="{{ asset('general/imgs/BUILDBETA_LOGO_PNG.png') }}" alt="Loader">
             </div>
         </div>
-    
+        @endif
         <div class="mobile-menu-overlay"></div>
         <!-- End .mobil-menu-overlay -->
     

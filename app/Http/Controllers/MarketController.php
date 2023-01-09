@@ -15,8 +15,10 @@ class MarketController extends Controller
     {
         //products
         $products = Product::orderBy('id', 'desc')->where('publish', 1)->paginate(30);
-        //sliders
+        //sliders last 3 with publish 1
         $sliders = Slider::orderBy('id', 'desc')->where('publish', 1)->get();
+        $take2Slides = Slider::orderBy('id', 'desc')->where('publish', 1)->take(2)->get();
+
         //get products with first provider id
         $productWithId1 = Product::orderBy('id', 'desc')->where('provider_id', 1)->where('publish', 1)->paginate(30);
         $productWithId2 = Product::orderBy('id', 'desc')->where('provider_id', 2)->where('publish', 1)->paginate(30);
@@ -37,14 +39,14 @@ class MarketController extends Controller
                 $personalize = Personalize::where('user_id', $currentUser)->first();
                 if ($personalize) {
                     //Write query here.
-                    return view('buildbeta', compact('categories', 'sub_categories', 'products', 'productWithId1', 'productWithId2', 'productWithId3', 'sliders'));
+                    return view('buildbeta', compact('categories', 'sub_categories', 'products', 'productWithId1', 'productWithId2', 'productWithId3', 'sliders', 'take2Slides'));
                 } else {
                     return view('auth.personalize');
                 }
             }
        
         } else {
-            return view('buildbeta', compact('categories', 'sub_categories', 'products', 'productWithId1', 'productWithId2', 'productWithId3', 'sliders'));
+            return view('buildbeta', compact('categories', 'sub_categories', 'products', 'productWithId1', 'productWithId2', 'productWithId3', 'sliders', 'take2Slides'));
         }
     }
 

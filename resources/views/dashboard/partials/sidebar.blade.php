@@ -33,6 +33,23 @@
                             class="side-menu__label">Dashboard</span></a>
                 </li>
 
+                <li class="slide">
+                    <a class="side-menu__item has-link 
+                    @if(request()->routeIs('slider.index') || request()->routeIs('slider.edit'))
+                        active
+                    @endif"
+                    data-bs-toggle="slide" href="{{ route('slider.index') }}"><i
+                            class="side-menu__icon fe fe-image"></i><span
+                            class="side-menu__label">Market Slider</span></a>
+                </li>
+
+                <li class="slide">
+                    <a class="side-menu__item has-link"
+                    data-bs-toggle="slide" href="/"><i
+                            class="side-menu__icon fe fe-grid"></i><span
+                            class="side-menu__label">Goto Market</span></a>
+                </li>
+
 
                 {{-- <li class="sub-category">
                     <h3>UI Kit</h3>
