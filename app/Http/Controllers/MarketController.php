@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class MarketController extends Controller
 {
+
     public function index()
     {
         //products
